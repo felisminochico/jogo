@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+main > section#links{
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0px;
+}

@@ -14,12 +14,22 @@
         max-width: 700px;
     }
 
-    main > article > h2{
-        font-size: 2.4em;
+    main > h2{
+        font-size: 2.1em;
     }
 
-    main > article > p{
-        font-size: 1.2em;
+    main > article{
+        align-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px 10px;
+        justify-content: space-around;
+    }
+
+    main > article > section > a{
+        display: block;
+        width: 300px;
     }
 
     main > article > fieldset > legend{
@@ -41,12 +51,22 @@
         max-width: 700px;
     }
 
-    main > article > h2{
-        font-size: 2.2em;
+    main > h2{
+        font-size: 2em;
     }
 
-    main > article > p{
-        font-size: 1.2em;
+    main > article{
+        align-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px 10px;
+        justify-content: space-around;
+    }
+
+    main > article > section > a{
+        display: block;
+        width: 300px;
     }
 
     main > article > fieldset > legend{
@@ -54,7 +74,7 @@
     }
 }
 
-@media screen and (max-width: 730px){
+@media screen and (min-width: 430.1px) and (max-width: 730px){
     header > h1{
         font-size: 2.2em;
     }
@@ -64,12 +84,22 @@
         max-width: 700px;
     }
 
-    main > article > h2{
-        font-size: 2.1em;
+    main > h2{
+        font-size: 1.8em;
     }
 
-    main > article > p{
-        font-size: 1em;
+    main > article{
+        align-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px 10px;
+        justify-content: space-around;
+    }
+
+    main > article > section > a{
+        display: block;
+        width: 300px;
     }
 }
 
@@ -82,8 +112,13 @@
         font-size: 1em;
     }
 
-    main > article > h2{
-        font-size: 2em;
+    main > h2{
+        font-size: 1.7em;
+    }
+
+    main > article{
+        display: grid;
+        gap: 20px 0px;
     }
 
     main > article > p{
@@ -94,7 +129,6 @@
         font-size: 1.16em;
     }
 }
-
 
 @keyframes gradiente{
     0%{
@@ -162,60 +196,27 @@ main{
     border-radius: 0px 0px 10px 10px;
     box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.438);
     margin-bottom: 20px;
-    padding: 25px 20px;
-    text-align: justify;
 }
 
-main > article > h2{
-    color: var(--cor4);
-    padding: 20px 0px 8px 0px;
+main > h2{
+    color: var(--cor1);
+    padding: 20px 0px;
     text-align: center;
 }
 
-main > article > p{
-    line-height: 1.5em;
-    margin: 8px 0px 16px 0px;
-    text-indent: 36px;
+main > article{
+    padding: 12px 8px 20px 8px;
 }
 
-main > article > fieldset{
-    background-color: #45575573;
-    border-radius: 10px;
-    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.562);
-    margin-bottom: 20px;
-    padding: 12px;
-}
-
-main > article > fieldset > legend{
-    color: var(--cor4);
-    font-weight: bold;
-    padding: 0px 7px;
-}
-
-main > article > fieldset > ul{
-    display: grid;
-    gap: 14px 0px;
-    list-style-type: disc;
-    list-style-position: inside;
-}
-
-main > article > fieldset > ul > li{
-    line-height: 1.5em;
-}
-
-main > article > p#link-comecar{
-    margin-top: 50px;
-    text-align: end;
-    text-indent: 0px;
-}
-
-main > article > p > a#comecar > button{
-    background-color: var(--cor2);
-    border: none;
+main > article > section > a{
+    background-color: var(--cor4);
     border-radius: 10px;
     color: white;
-    font-size: 0.94em;
-    padding: 22px;
+    display: block;
+    font-size: 1.1em;
+    padding: 16px 6px;
+    text-align: center;
+    text-decoration: none;
 }
 
 footer{
