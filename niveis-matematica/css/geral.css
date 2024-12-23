@@ -1,5 +1,131 @@
 @charset "UTF-8";
  
+@keyframes respostaCerta{
+
+    0%{
+        background-color: white;
+        color: black;
+    }
+
+    10%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    20%{
+        background-color: white;
+        color: black;
+    }
+
+    30%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    40%{
+        background-color: white;
+        color: black;
+    }
+
+    50%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    60%{
+        background-color: white;
+        color: black;
+    }
+
+    70%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    80%{
+        background-color: white;
+        color: black;
+    }
+
+    90%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    95%{
+        background-color: white;
+        color: black;
+    }
+
+    100%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+}
+
+@keyframes respostaErrada {
+    
+    0%{
+        background-color: white;
+        color: black;
+    }
+
+    10%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    20%{
+        background-color: white;
+        color: black;
+    }
+
+    30%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    40%{
+        background-color: white;
+        color: black;
+    }
+
+    50%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    60%{
+        background-color: white;
+        color: black;
+    }
+
+    70%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    80%{
+        background-color: white;
+        color: black;
+    }
+
+    90%{
+        background-color: rgb(12, 139, 12);
+        color: white;
+    }
+
+    95%{
+        background-color: white;
+        color: black;
+    }
+
+    100%{
+        background-color: red;
+        color: white;
+    }
+}
+
 :root{
     --cor0: #1B512D;
     --cor1: #455755;
@@ -38,7 +164,7 @@ header > h1{
 }
 
 header > p{
-    padding: 8px 10px 30px 8px;
+    padding: 8px 10px 50px 8px;
     text-align: center;
 }
 
@@ -50,7 +176,11 @@ header > nav{
 }
 
 main{
-    background-color: #1b512d49;
+    background-color: #45575583;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.603);
+    margin: 0px auto 26px auto;
+    max-width: 600px;
     padding: 20px 12px;
 }
 
@@ -86,7 +216,7 @@ main > section > article{
 main > section > article > p{
     align-items: center;
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 5% 95%;
 }
 
 main > section > article > p > span{
@@ -106,13 +236,25 @@ main > section#links{
     padding: 10px 20px;
 }
 
-main > section > a{
-    background-color: var(--cor4);
+main > section#links > a{
+    display: block;
+}
+
+main > section#links > a > #btn-recomecar{
+    background-color: var(--cor0);
+} 
+
+main > section#links > a > #btn-proximo-nivel{
+    background-color: #45214a79;
+    cursor: auto;
+}
+
+main > section > a > button{
     border-radius: 10px;
     color: white;
-    padding: 20px 10px;
-    text-align: center;
-    text-decoration: none;
+    cursor: pointer;
+    padding: 16px 10px;
+    width: 100%;
 }
 
 footer{

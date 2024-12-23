@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+header > nav{
+    justify-content: space-around;
+}
+
+
+main > section#links{
+    display: grid;
+    gap: 0px 12px;
+    grid-template-columns: 50% 50%;
+}
