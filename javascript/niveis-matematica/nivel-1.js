@@ -2,6 +2,7 @@
 //Variaveis Globais
 let pontosJS = 0;
 let vidasJS = 3;
+let botaoRecomecarJogo = window.document.getElementById('btn-recomecar');
 let botaoNivel2 = window.document.getElementById('btn-proximo-nivel')
 let pontosHTML = window.document.getElementById('pontos')
 let vidasHTML = window.document.getElementById('vidas');
@@ -139,6 +140,13 @@ for(let c = 1; c <= 4; c++){
 //     botoesSeccao2[c].style.opacity = '0.6';
 //     botoesSeccao2[c].style.opacity = '0.6';
 // }
+
+//Função do Botão para Recomeçar o Jogo
+function janelaRecomecarJogo(){
+    // alert('Clicaste no Botão de Recomeçar o Jogo.')
+
+    
+}
 
 function primeiraSeccao(x){
     if(x == 26){
