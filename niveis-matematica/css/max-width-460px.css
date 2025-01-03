@@ -17,3 +17,18 @@ main > section#links{
     flex-direction: column;
     gap: 15px 0px;
 }
+
+div#janela-recomecar-jogo{
+    place-content: center;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 100px;
+    min-height: 286vh;
+}
+
+div#container-recomecar-jogo{
+    background-color: white;
+    border-radius: 10px;
+    line-height: 1.5em;
+    padding: 10px;
+}
