@@ -17,21 +17,47 @@
         
         <article>
             <section>
-                <a href="niveis-matematica/nivel-1.html" target="_self">Matemática</a>
+                <span>Matemática</span>
             </section>
 
             <section>
-                <a>Língua Portuguesa</a>
+                <span onclick="mostrarJanelaNaoDisponivel()">Língua Portuguesa</span>
             </section>
 
             <section>
-                <a>Cultura Geral</a>
+                <span onclick="mostrarJanelaNaoDisponivel()">Cultura Geral</span>
             </section>
         </article>
     </main>
 
+    <dialog id="janela-nao-disponivel">
+        <div id="conteudo">
+            <h2>Ups...</h2>
+            <p>Lamentamos, esta categoria ainda não está disponível no momento.</p>
+        </div>
+
+        <div id="opcao">
+            <button>Fechar</button>
+        </div>
+    </dialog>
+
     <footer>
         <span>&copy; 2024</span> <span>Felismino Chico</span>
     </footer>
+
+    <script>
+        const janelaNaoDisponivel = window.document.getElementById("janela-nao-disponivel");
+        const botaoFecharJanela = window.document.querySelector("#opcao button");
+
+        function mostrarJanelaNaoDisponivel(){
+            janelaNaoDisponivel.style.display = "grid";
+            janelaNaoDisponivel.showModal();
+        }
+
+        botaoFecharJanela.addEventListener("click", () =>{
+            janelaNaoDisponivel.style.display = "none";
+            janelaNaoDisponivel.close();
+        })
+    </script>
 </body>
 </html>

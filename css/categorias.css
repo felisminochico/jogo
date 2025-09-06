@@ -33,7 +33,7 @@
         justify-content: space-around;
     }
 
-    main > article > section > a{
+    main > article > section > span{
         display: block;
         width: 300px;
     }
@@ -70,7 +70,7 @@
         justify-content: space-around;
     }
 
-    main > article > section > a{
+    main > article > section > span{
         display: block;
         width: 300px;
     }
@@ -99,11 +99,11 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 20px 10px;
+        gap: 20px 30px;
         justify-content: space-around;
     }
 
-    main > article > section > a{
+    main > article > section > span{
         display: block;
         width: 300px;
     }
@@ -125,11 +125,18 @@
     main > article{
         display: grid;
         gap: 20px 0px;
+        grid-template-columns: 1fr;
+        justify-content: center;
     }
 
-    main > article > p{
-        font-size: 1em;
+    main > article > section > span{
+        margin: auto;
+        width: 80%;
     }
+
+    /* main > article > p{
+        font-size: 1em;
+    } */
 
     main > article > fieldset > legend{
         font-size: 1.16em;
@@ -215,15 +222,50 @@ main > article{
     padding: 12px 8px 20px 8px;
 }
 
-main > article > section > a{
+main > article > section > span{
     background-color: var(--cor4);
     border-radius: 10px;
     color: white;
+    cursor: pointer;
     display: block;
     font-size: 1.1em;
     padding: 16px 6px;
     text-align: center;
     text-decoration: none;
+}
+
+dialog#janela-nao-disponivel{
+    align-content: space-around;
+    border: none;
+    border-radius: 10px;
+    display: none;
+    height: 210px;
+    margin: auto;
+    padding: 10px;
+    width: 350px;
+
+    div#conteudo{
+        h2{
+            padding: 10px 0px;
+        }
+
+        p{
+            line-height: 1.5em;
+        }
+    }
+
+    div#opcao > button{
+        background-color: darkred;
+        border: none;
+        color: white;
+        font-size: 1em;
+        padding: 14px 0px;
+        width: 100%;
+    }
+}
+
+dialog#janela-nao-disponivel::backdrop{
+    backdrop-filter: blur(7px);
 }
 
 footer{
