@@ -17,7 +17,7 @@
         
         <article>
             <section>
-                <span>Matemática</span>
+                <span id="categoria-matematica">Matemática</span>
             </section>
 
             <section>
@@ -31,13 +31,15 @@
     </main>
 
     <dialog id="janela-nao-disponivel">
-        <div id="conteudo">
-            <h2>Ups...</h2>
-            <p>Lamentamos, esta categoria ainda não está disponível no momento.</p>
-        </div>
-
-        <div id="opcao">
-            <button>Fechar</button>
+        <div id="caixa">
+            <div id="conteudo">
+                <h2>Ups...</h2>
+                <p>Lamentamos, esta categoria ainda não está disponível no momento.</p>
+            </div>
+    
+            <div id="opcao">
+                <button>Fechar</button>
+            </div>
         </div>
     </dialog>
 
@@ -48,14 +50,18 @@
     <script>
         const janelaNaoDisponivel = window.document.getElementById("janela-nao-disponivel");
         const botaoFecharJanela = window.document.querySelector("#opcao button");
+        const categoriaMatematica = window.document.getElementById("categoria-matematica")
+
+        // janelaNaoDisponivel.showModal();
+        categoriaMatematica.addEventListener("click", () =>{
+            window.location.href = "niveis-matematica/nivel-1.html";
+        })
 
         function mostrarJanelaNaoDisponivel(){
-            janelaNaoDisponivel.style.display = "grid";
             janelaNaoDisponivel.showModal();
         }
 
         botaoFecharJanela.addEventListener("click", () =>{
-            janelaNaoDisponivel.style.display = "none";
             janelaNaoDisponivel.close();
         })
     </script>
