@@ -15,39 +15,50 @@
 
     <main>
         <article>
-            <h2>Bem-Vindo</h2>
+            <h2>Bem-vindo</h2>
 
-            <p>Caríssimo, Visitante! Seja muito Bem-Vindo ao Site de Jogo de Sabedoria onde tu podes aperfeiçoar de uma maneira incrível os teus conhecimentos.</p>
+            <p><span id="saudacao">Saudação</span>, <strong>Caríssimo Visitante</strong>! Seja muito Bem-vindo ao Site de Jogo de Sabedoria, onde tu podes aperfeiçoar de uma maneira incrível os teus conhecimentos.</p>
 
-            <p>Antes de mais nada, recomendamos que leia as instruções do jogo, logo abaixo.</p>
+            <p>Sem mais enrolação, recomendamos que leia as instruções do jogo, logo abaixo:</p>
 
             <fieldset><legend>Instruções do jogo</legend>
                 <ul>
                     <li>O Jogo está dividido por categorias e cada categoria está constituído por 5 níveis;</li>
 
-                    <li>Cada Secção de Questões é composto por 5 alternativas e o Jogador só tem o direito à uma alternativa.</li>
+                    <li>Cada Secção de Questões é composto por 4 alternativas e o Jogador só tem o direito à uma alternativa.</li>
 
                     <li>Caso a alternativa estiver certa, os seus Pontos do Nível 1 valerão 5, no Nível 2 valerão 10, no Nível 3 valerão 15, no Nível 4 valerão 20 e no Nível 5 valerão 25.</li>
 
-                    <li>Caso a alternativa estiver certa, será representada com o fundo verde. Caso estiver errado, será representada com o fundo vermelho.</li>
+                    <li>Alternativas certas são representadas com a cor de fundo verde. Alternativas erradas são representadas com a cor de fundo vermelho.</li>
 
-                    <li>O Jogador só tem direito à três Vidas no Jogo, cada questão que errar será descontada na sua Vida de Jogo, caso acerte a vida será permanencida;</li>
+                    <li>O Jogador só tem direito à três Vidas inicialmente no Jogo, cada questão que errar será descontada na sua Vida de Jogo, caso acerte a vida será permanencida;</li>
                     
-                    <li>Recomendamos que não atualize o seu navegador no momento do Jogo, caso queiras Recomeçar o Jogo ou caso não tiveres mais Vidas de Jogo, basta clicares no Botão de <q>Recomeçar o Jogo</q> que estará sempre disponível em todos os níveis(abaixo das secções de questões);</li>
+                    <li>Cada avanço de Nível, a Vida do Jogador será acrescentado de acordo ao prórprio nível;</li>
 
                     <li>Após concluir todos os níveis, o Jogador terá recompensas no Final;</li>
                 </ul>
             </fieldset>
 
+            <section>
+                <p><strong>Aviso:</strong> Recomendamos que não atualize o seu navegador no momento do Jogo, para a melhor experiência e aproveitamento do Jogo, baixe a aplicação.</p>
+            </section>
+
             <p style="text-indent: 0px;"><input type="checkbox" name="aceitarInstrucao" id="aceitarInstrucao"> <label for="aceitarInstrucao"> Aceito todas as Instruções do Jogo e quero Começar a Jogar.</label></p>
 
-            <p id="link-comecar"><a href="categorias.html" target="_self" id="comecar"><button disabled style="opacity: 0.5;">Começar o Jogo</button></a></p>
+            <p id="link-comecar"><button disabled style="opacity: 0.5;">Começar o Jogo</button></p>
         </article>
     </main>
 
     <footer>
-        <span>&copy; 2024</span>
-        <span>Felismino Chico</span>
+        <div id="contactos">
+            <span>Contactos</span>
+            <span>943 136 535 | 941 500 596</span>
+        </div>
+
+        <div>
+            <span id="ano-atual">&copy; 2024</span>
+            <span>Felismino Chico</span>
+        </div>
     </footer>
 
     <script src="javascript/bem-vindo.js" type="text/javascript"></script>

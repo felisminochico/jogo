@@ -167,7 +167,7 @@ header > h1{
     font-family: 'Parkinsans', Arial, Helvetica, sans-serif;
     font-size: 2em;
     font-weight: normal;
-    padding: 10px 0px 30px 0px;
+    padding: 10px 0px 33px 0px;
     text-align: center;
 }
 
@@ -178,7 +178,7 @@ header > p{
 }
 
 header > nav{
-    background-color: var(--cor1);
+    background-color: var(--cor0);
     display: flex;
     justify-content: space-between;
     padding: 15px 10px;
@@ -209,13 +209,14 @@ main > section{
 
 main > section > h3{
     color: white;
+    font-size: 1.4em;
     font-weight: normal;
     padding: 12px 0px 6px 0px;
     text-align: center;
 }
 
 main > section > article{
-    border: 2px solid black;
+    border: 3px solid var(--cor1);
     border-radius: 10px;
     display: grid;
     gap: 12px 0px;
@@ -239,6 +240,7 @@ main > section > article > p > button{
     background-color: white;
     border: 1px solid black;
     cursor: pointer;
+    font-size: 0.98em;
     font-weight: bold;
     padding: 10px 0px;
 }
@@ -268,25 +270,155 @@ main > section > a, main > section > button{
     width: 100%;
 }
 
-div#janela-recomecar-jogo{
-    background-color: rgba(0, 0, 0, 0.493);
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    z-index: 2;
+.fixo{
+    background-color: var(--cor2);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 5;
+}
+
+main > dialog#game-over, dialog#nivel-2{
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+
+    #caixa-game-over, #caixa-nivel-2{
+        align-content: space-between;
+        display: grid;
+        min-height: 140px;
+
+        #conteudo-game-over{
+
+            h3{
+                color: darkred;
+                font-size: 1.7em;
+                font-weight: normal;
+                padding: 0px 0px 10px 0px;
+            }
+        }
+
+        #opcao-game-over{
+            column-gap: 12px;
+            display: flex;
+            justify-content: end;
+
+            span{
+                color: white;
+                cursor: pointer;
+                padding: 12px 0px;
+                text-align: center;
+                width: 110px;
+            }
+
+            span#aceitar-recomecar{
+                background-color: darkblue;
+            }
+
+            span#nao-aceitar-recomecar{
+                background-color: darkred;
+            }
+        }
+    }
+}
+
+main > dialog#game-over::backdrop, dialog#sair-categoria::backdrop, dialog#nivel-2::backdrop{
+    backdrop-filter: blur(8px);
+}
+
+main > div#link-sair-categoria{
+    margin: auto;
+    text-align: end;
+    width: 90%;
+
+    button{
+        background-color: var(--cor2);
+        border: none;
+        border-radius: 7px;
+        color: white;
+        cursor: pointer;
+        padding: 14px 8px;
+        width: 180px;
+    }
+}
+
+main > dialog#sair-categoria{
+    border-radius: 10px;
+    margin: auto;
+
+    #caixa-sair-categoria{
+        display: grid;
+        align-content: space-between;
+        min-height: 120px;
+        padding: 10px;
+
+        #opcao-sair-categoria{
+            display: flex;
+            color: white;
+            column-gap: 12px;
+            justify-content: end;
+
+            span{
+                cursor: pointer;
+                padding: 10px 0px;
+                text-align: center;
+                width: 110px;
+            }
+
+            span#aceitar-sair-categoria{
+                background: darkblue;
+            }
+
+            span#nao-aceitar-sair-categoria{
+                background-color: darkred;
+            }
+        }
+    }
+}
+
+main > dialog#nivel-2{
+    
+    #caixa-nivel-2{
+
+        h3{
+            color: green;
+            font-size: 1.7em;
+            padding: 7px 0px;
+        }
+
+        strong{
+            color: var(--cor4);
+        }
+    }
+
+    #opcao-nivel-2{
+
+        span#avancar-nivel-2{
+            background-color: var(--cor4);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            display: inline-block;
+            padding: 12px 0px;
+            text-align: center;
+            width: 100%;
+        }
+    }
 }
 
 footer{
-    background-image: linear-gradient(to right, var(--cor2), var(--cor4));
+    align-content: space-around;
+    animation: gradiente 20s infinite alternate;
+    background-image: linear-gradient(45deg, var(--cor2), var(--cor3), var(--cor4), var(--cor0));
+    background-size: 2000% 100%;
     color: white;
     display: grid;
-    font-style: italic;
-    gap: 14px 0px;
-    justify-content: center;
-    padding: 30px 10px;
-}
+    height: 160px;
+    justify-items: center;
 
-footer > span{
-    text-align: center;
+    div{
+        display: grid;
+        row-gap: 12px;
+        justify-items: center;
+    }
 }

@@ -25,7 +25,7 @@
     }
 
     main > article > p{
-        font-size: 1.2em;
+        /* font-size: 1.2em; */
     }
 
     main > article > fieldset > legend{
@@ -52,7 +52,7 @@
     }
 
     main > article > p{
-        font-size: 1.2em;
+        /* font-size: 1.2em; */
     }
 
     main > article > fieldset > legend{
@@ -75,7 +75,7 @@
     }
 
     main > article > p{
-        font-size: 1em;
+        /* font-size: 1em; */
     }
 }
 
@@ -93,7 +93,7 @@
     }
 
     main > article > p{
-        font-size: 1em;
+        /* font-size: 1em; */
     }
 
     main > article > fieldset > legend{
@@ -185,6 +185,10 @@ main > article > p{
     line-height: 1.5em;
     margin: 8px 0px 16px 0px;
     text-indent: 36px;
+
+    #saudacao{
+        font-weight: bold;
+    }
 }
 
 main > article > fieldset{
@@ -219,7 +223,7 @@ main > article > p#link-comecar{
     text-indent: 0px;
 }
 
-main > article > p > a#comecar > button{
+main > article > p > button{
     background-color: var(--cor2);
     border: none;
     border-radius: 10px;
@@ -228,14 +232,33 @@ main > article > p > a#comecar > button{
     padding: 22px;
 }
 
+main > article > section{
+    background-color: rgba(255, 255, 8, 0.836);
+    border-radius: 10px;
+    padding: 10px;
+
+    p{
+        line-height: 1.5em;
+    }
+
+    strong{
+        color: red;
+        font-weight: bold;
+    }
+}
+
 footer{
+    align-content: space-around;
     animation: gradiente 20s infinite alternate;
     background-image: linear-gradient(45deg, var(--cor2), var(--cor3), var(--cor4), var(--cor0));
     background-size: 2000% 100%;
-    color: white;
     display: grid;
-    font-style: italic;
-    gap: 14px 0px;
-    padding: 40px 14px;
-    place-items: center;
+    height: 160px;
+    justify-items: center;
+
+    div{
+        display: grid;
+        row-gap: 12px;
+        justify-items: center;
+    }
 }

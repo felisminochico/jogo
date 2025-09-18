@@ -273,13 +273,17 @@ dialog#janela-nao-disponivel::backdrop{
 }
 
 footer{
+    align-content: space-around;
     animation: gradiente 20s infinite alternate;
     background-image: linear-gradient(45deg, var(--cor2), var(--cor3), var(--cor4), var(--cor0));
     background-size: 2000% 100%;
-    color: white;
     display: grid;
-    font-style: italic;
-    gap: 14px 0px;
-    padding: 40px 14px;
-    place-items: center;
+    height: 160px;
+    justify-items: center;
+
+    div{
+        display: grid;
+        row-gap: 12px;
+        justify-items: center;
+    }
 }

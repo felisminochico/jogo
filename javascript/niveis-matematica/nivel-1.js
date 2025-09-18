@@ -5,6 +5,7 @@ let vidasJS = 3;
 let pontosHTML = window.document.getElementById('pontos');
 let vidasHTML = window.document.getElementById('vidas');
 let Artigos = window.document.getElementsByTagName('article');
+const aceitarRecomecarJogo = window.document.getElementById("aceitar-recomecar");
 const valoresSeccao1 = window.document.querySelectorAll("#valores-seccao-1 span");
 const valoresSeccao2 = window.document.querySelectorAll("#valores-seccao-2 span");
 const valoresSeccao3 = window.document.querySelectorAll("#valores-seccao-3 span");
@@ -136,7 +137,7 @@ function terceiraSeccao(botao){
     desabilitarBotoesAtuais(botoesSeccao3);
 
     if(vidasJS < 1){
-        alert("Você perdeu!!!");
+        gameOver();       
     }else{
         desabilitarProximaSeccao(botoesSeccao4, Seccoes[3]);
     }
@@ -148,6 +149,13 @@ function quartaSeccao(botao){
     }else{
         respostaErrada(botao, botoesSeccao4, resultadoSeccao4);
     }
+    desabilitarBotoesAtuais(botoesSeccao4);
+
+    if(vidasJS < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao5, Seccoes[4]);
+    }
 }
 
 function quintaSeccao(botao){
@@ -155,6 +163,13 @@ function quintaSeccao(botao){
         respostaCerta(botao);
     }else{
         respostaErrada(botao, botoesSeccao5, resultadoSeccao5);
+    }
+    desabilitarBotoesAtuais(botoesSeccao5);
+
+    if(vidasJS < 1){
+        gameOver();
+    }else{
+        nivel2();
     }
 }
 
@@ -192,3 +207,8 @@ for(const botoes of botoesSeccao5){
         quintaSeccao(this);
     })
 }
+
+//Função para aceitar Recomeçar o jogo
+aceitarRecomecarJogo.addEventListener("click", ()=>{
+    window.location.reload();
+})
