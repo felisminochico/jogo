@@ -151,6 +151,10 @@
     width: 0;
 }
 
+html, body{
+    overscroll-behavior: contain;
+}
+
 body{
     background-color: rgb(1, 31, 31);
     height: 100vh;
@@ -278,12 +282,13 @@ main > section > a, main > section > button{
     z-index: 5;
 }
 
-main > dialog#game-over, dialog#nivel-2{
+main > dialog#game-over, dialog#proximo-nivel{
     border-radius: 10px;
     margin: auto;
     padding: 10px;
+    overscroll-behavior: contain;
 
-    #caixa-game-over, #caixa-nivel-2{
+    #caixa-game-over, #caixa-proximo-nivel{
         align-content: space-between;
         display: grid;
         min-height: 140px;
@@ -322,7 +327,7 @@ main > dialog#game-over, dialog#nivel-2{
     }
 }
 
-main > dialog#game-over::backdrop, dialog#sair-categoria::backdrop, dialog#nivel-2::backdrop{
+main > dialog#game-over::backdrop, dialog#sair-categoria::backdrop, dialog#proximo-nivel::backdrop{
     backdrop-filter: blur(8px);
 }
 
@@ -345,6 +350,7 @@ main > div#link-sair-categoria{
 main > dialog#sair-categoria{
     border-radius: 10px;
     margin: auto;
+    overscroll-behavior: contain;
 
     #caixa-sair-categoria{
         display: grid;
@@ -376,9 +382,10 @@ main > dialog#sair-categoria{
     }
 }
 
-main > dialog#nivel-2{
-    
-    #caixa-nivel-2{
+main > dialog#proximo-nivel{
+
+    #caixa-proximo-nivel{
+        height: 180px;
 
         h3{
             color: green;
@@ -391,7 +398,13 @@ main > dialog#nivel-2{
         }
     }
 
-    #opcao-nivel-2{
+    #opcao-proximo-nivel{
+
+        #pontos-vidas{
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 10px;
+        }
 
         span#avancar-nivel-2{
             background-color: var(--cor4);

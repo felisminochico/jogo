@@ -2,10 +2,9 @@
 //Variaveis Globais
 let pontosJS = 0;
 let vidasJS = 3;
-let pontosHTML = window.document.getElementById('pontos');
-let vidasHTML = window.document.getElementById('vidas');
 let Artigos = window.document.getElementsByTagName('article');
 const aceitarRecomecarJogo = window.document.getElementById("aceitar-recomecar");
+const avancarNivel2 = window.document.getElementById("avancar-nivel-2");
 const valoresSeccao1 = window.document.querySelectorAll("#valores-seccao-1 span");
 const valoresSeccao2 = window.document.querySelectorAll("#valores-seccao-2 span");
 const valoresSeccao3 = window.document.querySelectorAll("#valores-seccao-3 span");
@@ -83,36 +82,28 @@ let resultadoSeccao5 = Number(valoresSeccao5[0].innerHTML) + (Number(valoresSecc
 mudancaValores(resultadoSeccao5, botoesSeccao5);
 botoesSeccao5[Number(Math.floor(Math.random() * botoesSeccao5.length))].innerHTML = resultadoSeccao5;
 
-//Mostrar o Botão Certo de Qualquer Seccão
-function respostaErrada(botao, btnSeccao1, resultado){
-    botao.style.animation = "respostaErrada 3.6s forwards";
+function calcularVidas(){
     vidasJS -= 1;
-    for(const btn of btnSeccao1){
-        if(Number(btn.innerHTML) === resultado){
-            setTimeout(()=>{
-                btn.style.backgroundColor = "rgb(12, 139, 12)";
-                btn.style.color = "white";
-                vidasHTML.innerHTML = vidasJS;
-            }, 3550);
-        }
-    }
+    setTimeout(()=>{
+        vidasHTML.innerHTML = vidasJS;
+    }, 3550);
 }
 
-//Resposta Certa de Qualquer Secçao
-function respostaCerta(botao){
-    botao.style.animation = "respostaCerta 3.6s forwards";
-    setTimeout(() =>{
-        pontosJS += 5;
+function calcularPontos(){
+    pontosJS += 5;
+    setTimeout(()=>{
         pontosHTML.innerHTML = pontosJS;
-    }, 3600);
+    }, 3550);
 }
 
 //Primeira Secão
 function primeiraSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao1){
         respostaCerta(botao);
+        calcularPontos();
     }else{
         respostaErrada(botao, botoesSeccao1, resultadoSeccao1);
+        calcularVidas();
     }
     desabilitarBotoesAtuais(botoesSeccao1);
     desabilitarProximaSeccao(botoesSeccao2, Seccoes[1]);
@@ -121,8 +112,10 @@ function primeiraSeccao(botao){
 function segundaSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao2){
         respostaCerta(botao);
+        calcularPontos();
     }else{
         respostaErrada(botao, botoesSeccao2, resultadoSeccao2);
+        calcularVidas();
     }
     desabilitarBotoesAtuais(botoesSeccao2);
     desabilitarProximaSeccao(botoesSeccao3, Seccoes[2])
@@ -131,8 +124,10 @@ function segundaSeccao(botao){
 function terceiraSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao3){
         respostaCerta(botao);
+        calcularPontos();
     }else{
         respostaErrada(botao, botoesSeccao3, resultadoSeccao3);
+        calcularVidas();
     }
     desabilitarBotoesAtuais(botoesSeccao3);
 
@@ -146,8 +141,10 @@ function terceiraSeccao(botao){
 function quartaSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao4){
         respostaCerta(botao);
+        calcularPontos();
     }else{
         respostaErrada(botao, botoesSeccao4, resultadoSeccao4);
+        calcularVidas();
     }
     desabilitarBotoesAtuais(botoesSeccao4);
 
@@ -161,15 +158,17 @@ function quartaSeccao(botao){
 function quintaSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao5){
         respostaCerta(botao);
+        calcularPontos();
     }else{
         respostaErrada(botao, botoesSeccao5, resultadoSeccao5);
+        calcularVidas();
     }
     desabilitarBotoesAtuais(botoesSeccao5);
 
     if(vidasJS < 1){
         gameOver();
     }else{
-        nivel2();
+        proximoNivel(pontosJS, vidasJS);
     }
 }
 
@@ -211,4 +210,11 @@ for(const botoes of botoesSeccao5){
 //Função para aceitar Recomeçar o jogo
 aceitarRecomecarJogo.addEventListener("click", ()=>{
     window.location.reload();
+})
+
+//Função para Avançar para o Nível 2
+avancarNivel2.addEventListener("click", ()=>{
+    sessionStorage.setItem("pontos", pontosJS);
+    sessionStorage.setItem("vidas", vidasJS);
+    window.location.replace("nivel-2.html");
 })

@@ -1,5 +1,7 @@
 // alert("Olá, Mundo!");
 const nav = window.document.getElementsByTagName("nav")[0];
+let pontosHTML = window.document.getElementById('pontos');
+let vidasHTML = window.document.getElementById('vidas');
 let Seccoes = window.document.getElementsByTagName('section');
 const todosBotoesSeccoes = window.document.querySelectorAll(".seccoes button");
 const caixaGameOver = window.document.getElementById("game-over");
@@ -8,8 +10,10 @@ const negarRecomecarJogo = window.document.getElementById("nao-aceitar-recomecar
 const aceitarSairCategoria = window.document.getElementById("aceitar-sair-categoria");
 const negarSairCategoria = window.document.getElementById("nao-aceitar-sair-categoria");
 const caixaSairCategoria = window.document.getElementById("sair-categoria");
-const caixaNivel2 = window.document.getElementById("nivel-2");
+const caixaNivel2 = window.document.getElementById("proximo-nivel");
 const botaoSairCategoria = window.document.getElementById("btn-sair-categoria");
+const pontosFinal = window.document.getElementById("pts");
+const vidasFinal = window.document.getElementById("vds");
 let linguagemLocal = window.navigator.language;
 let hora = new Date().toLocaleString(linguagemLocal, {hour: "numeric"});
 const anoAtual = window.document.getElementById("ano-atual");
@@ -44,17 +48,43 @@ function gameOver(){
     }, 5000);
 }
 
-negarRecomecarJogo.addEventListener("click", ()=>{
-    window.location.replace("../categorias.html");
-})
-
 //Janela do Nível 2
-function nivel2(){
+function proximoNivel(pts, vds){
     setTimeout(()=>{
         caixaNivel2.showModal();
         window.document.body.style.overflow = "hidden";
+        pontosFinal.innerHTML = `Pontos: <strong>${pts}</strong>`;
+        vidasFinal.innerHTML = `Vidas: <strong>${vds}</strong>`;
     }, 5000);
 }
+
+//Mostrar o Botão Certo de Qualquer Seccão
+function respostaErrada(botao, btnSeccao1, resultado){
+    botao.style.animation = "respostaErrada 3.6s forwards";
+    // vidasJS -= 1;
+    for(const btn of btnSeccao1){
+        if(Number(btn.innerHTML) === resultado){
+            setTimeout(()=>{
+                btn.style.backgroundColor = "rgb(12, 139, 12)";
+                btn.style.color = "white";
+                // vidasHTML.innerHTML = vidasJS;
+            }, 3550);
+        }
+    }
+}
+
+//Resposta Certa de Qualquer Secçao
+function respostaCerta(botao){
+    botao.style.animation = "respostaCerta 3.6s forwards";
+    // setTimeout(() =>{
+    //     pontosJS += 5;
+    //     pontosHTML.innerHTML = pontosJS;
+    // }, 3600);
+}
+
+negarRecomecarJogo.addEventListener("click", ()=>{
+    window.location.replace("../categorias.html");
+});
 
 //Fixando a Nav quando chegar no topo
 window.addEventListener("scroll", fixarNav)
