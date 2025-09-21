@@ -21,6 +21,15 @@ const anoAtual = window.document.getElementById("ano-atual");
 //Verificação do ano atual
 anoAtual.innerHTML = "\u00A9 " + new Date().toLocaleString(linguagemLocal, {year: "numeric"});
 
+//Desabilitação e Opacidade de todas Secções e Botões
+// for(const botoes of todosBotoesSeccoes){
+//     botoes.disabled = true;
+//     botoes.style.cursor = "auto";
+// }
+// for(const secc of Seccoes){
+//     secc.style.opacity = "0.1";
+// }
+
 //Janela Sair Categoria
 function janelaSairCategoria(){
     caixaSairCategoria.showModal();
@@ -98,15 +107,7 @@ function fixarNav(){
 }
 requestAnimationFrame(fixarNav);
 
-//Desabilitação e Opacidade de todas Secções e Botões
-for(const botoes of todosBotoesSeccoes){
-    botoes.disabled = true;
-    botoes.style.cursor = "auto";
-}
-for(const secc of Seccoes){
-    secc.style.opacity = "0.1";
-}
-
+//Função para Desabilitar Botões da Secção atual
 function desabilitarBotoesAtuais(btnSeccao){
     for(const botoes of btnSeccao){
         botoes.disabled = true;
@@ -115,6 +116,7 @@ function desabilitarBotoesAtuais(btnSeccao){
     }
 }
 
+//Função para Desabilitar Botões do Próximo Nível
 function desabilitarProximaSeccao(btnSeccao, seccao){
     setTimeout(()=>{
         seccao.style.opacity = "1";
