@@ -406,15 +406,17 @@ main > dialog#proximo-nivel{
             padding: 4px 10px;
         }
 
-        span#avancar-nivel-2{
-            background-color: var(--cor4);
-            border-radius: 8px;
-            color: white;
-            cursor: pointer;
-            display: inline-block;
-            padding: 12px 0px;
-            text-align: center;
-            width: 100%;
+        #opcao-avancar{
+            span{
+                background-color: var(--cor4);
+                border-radius: 8px;
+                color: white;
+                cursor: pointer;
+                display: inline-block;
+                padding: 12px 0px;
+                text-align: center;
+                width: 100%;
+            }
         }
     }
 }

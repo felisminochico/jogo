@@ -3,6 +3,26 @@ const nav = window.document.getElementsByTagName("nav")[0];
 let pontosHTML = window.document.getElementById('pontos');
 let vidasHTML = window.document.getElementById('vidas');
 let Seccoes = window.document.getElementsByTagName('section');
+const valoresSeccao1 = window.document.querySelectorAll("#valores-seccao-1 span");
+const valoresSeccao2 = window.document.querySelectorAll("#valores-seccao-2 span");
+const valoresSeccao3 = window.document.querySelectorAll("#valores-seccao-3 span");
+const valoresSeccao4 = window.document.querySelectorAll("#valores-seccao-4 span");
+const valoresSeccao5 = window.document.querySelectorAll("#valores-seccao-5 span");
+const valoresSeccao6 = window.document.querySelectorAll("#valores-seccao-6 span");
+const valoresSeccao7 = window.document.querySelectorAll("#valores-seccao-7 span");
+const valoresSeccao8 = window.document.querySelectorAll("#valores-seccao-8 span");
+const valoresSeccao9 = window.document.querySelectorAll("#valores-seccao-9 span");
+const valoresSeccao10 = window.document.querySelectorAll("#valores-seccao-10 span");
+const botoesSeccao1 = window.document.getElementsByClassName('btn-primeira-seccao');
+const botoesSeccao2 = window.document.getElementsByClassName('btn-segunda-seccao');
+const botoesSeccao3 = window.document.getElementsByClassName('btn-terceira-seccao');
+const botoesSeccao4 = window.document.getElementsByClassName('btn-quarta-seccao');
+const botoesSeccao5 = window.document.getElementsByClassName('btn-quinta-seccao');
+const botoesSeccao6 = window.document.getElementsByClassName("btn-sexta-seccao");
+const botoesSeccao7 = window.document.getElementsByClassName("btn-setima-seccao");
+const botoesSeccao8 = window.document.getElementsByClassName("btn-oitava-seccao");
+const botoesSeccao9 = window.document.getElementsByClassName("btn-nona-seccao");
+const botoesSeccao10 = window.document.getElementsByClassName("btn-decima-seccao");
 const todosBotoesSeccoes = window.document.querySelectorAll(".seccoes button");
 const caixaGameOver = window.document.getElementById("game-over");
 let posicaoAtualNav = nav.offsetTop;
@@ -22,13 +42,110 @@ const anoAtual = window.document.getElementById("ano-atual");
 anoAtual.innerHTML = "\u00A9 " + new Date().toLocaleString(linguagemLocal, {year: "numeric"});
 
 //Desabilitação e Opacidade de todas Secções e Botões
-// for(const botoes of todosBotoesSeccoes){
-//     botoes.disabled = true;
-//     botoes.style.cursor = "auto";
-// }
-// for(const secc of Seccoes){
-//     secc.style.opacity = "0.1";
-// }
+for(const botoes of todosBotoesSeccoes){
+    botoes.disabled = true;
+    botoes.style.cursor = "auto";
+}
+for(const secc of Seccoes){
+    secc.style.opacity = "0.1";
+}
+
+//Função que muda os valores dos Botões
+function mudancaValores2(res, btnSeccao){
+    for(c = 0; c < btnSeccao.length; c++){
+        if(res < 40){
+            if(c == 0){
+                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res - 1) - (res - 5)) + 1) + (res - 5)));
+            }else if(c == 1){
+                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res + 5) - (res + 1)) + 1) + (res + 1)));
+            }else if(c == 2){
+                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res - 6) - (res - 11)) + 1) + (res - 11)));
+            }else if(c == 3){
+                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res + 11) - (res + 6)) + 1) + (res + 6)));
+            }
+        }else{  
+            if(c == 0){
+                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res - 1) - (res - 10)) + 1) + (res - 10)));
+            }else if(c == 1){
+                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res + 10) - (res + 1)) + 1) + (res + 1)));
+            }else if(c == 2){
+                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res - 11) - (res - 20)) + 1) + (res - 20)));
+            }else if(c == 3){
+                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res + 20) - (res + 11)) + 1) + (res + 11)));
+            }
+        }
+    }
+}
+
+//Criando Evento de clique da Primeira Secção
+for(const botoes of botoesSeccao1){
+    botoes.addEventListener("click", function(){
+        primeiraSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Segunda Secção
+for(const botoes of botoesSeccao2){
+    botoes.addEventListener("click", function(){
+        segundaSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Terceira Secção
+for(const botoes of botoesSeccao3){
+    botoes.addEventListener("click", function(){
+        terceiraSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Quarta Secção
+for(const botoes of botoesSeccao4){
+    botoes.addEventListener("click", function(){
+        quartaSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Quinta Secção
+for(const botoes of botoesSeccao5){
+    botoes.addEventListener("click", function(){
+        quintaSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Sexta Secção
+for(const botoes of botoesSeccao6){
+    botoes.addEventListener("click", function(){
+        sextaSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Sétima Secção
+for(const botoes of botoesSeccao7){
+    botoes.addEventListener("click", function(){
+        setimaSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Oitava Secção
+for(const botoes of botoesSeccao8){
+    botoes.addEventListener("click", function(){
+        oitavaSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Nona Secção
+for(const botoes of botoesSeccao9){
+    botoes.addEventListener("click", function(){
+        nonaSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Décima Secção
+for(const botoes of botoesSeccao10){
+    botoes.addEventListener("click", function(){
+        decimaSeccao(this);
+    });
+}
 
 //Janela Sair Categoria
 function janelaSairCategoria(){

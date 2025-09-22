@@ -5,16 +5,6 @@ let vidasJS = 3;
 let Artigos = window.document.getElementsByTagName('article');
 const aceitarRecomecarJogo = window.document.getElementById("aceitar-recomecar");
 const avancarNivel2 = window.document.getElementById("avancar-nivel-2");
-const valoresSeccao1 = window.document.querySelectorAll("#valores-seccao-1 span");
-const valoresSeccao2 = window.document.querySelectorAll("#valores-seccao-2 span");
-const valoresSeccao3 = window.document.querySelectorAll("#valores-seccao-3 span");
-const valoresSeccao4 = window.document.querySelectorAll("#valores-seccao-4 span");
-const valoresSeccao5 = window.document.querySelectorAll("#valores-seccao-5 span");
-const botoesSeccao1 = window.document.getElementsByClassName('btn-primeira-seccao');
-const botoesSeccao2 = window.document.getElementsByClassName('btn-segunda-seccao');
-const botoesSeccao3 = window.document.getElementsByClassName('btn-terceira-seccao');
-const botoesSeccao4 = window.document.getElementsByClassName('btn-quarta-seccao');
-const botoesSeccao5 = window.document.getElementsByClassName('btn-quinta-seccao');
 const vetorValoresSeccao3 = [[54, 6], [48, 8], [52, 4], [42, 6], [64, 4]];
 
 //Habilitação da Secção 1
@@ -82,6 +72,7 @@ let resultadoSeccao5 = Number(valoresSeccao5[0].innerHTML) + (Number(valoresSecc
 mudancaValores(resultadoSeccao5, botoesSeccao5);
 botoesSeccao5[Number(Math.floor(Math.random() * botoesSeccao5.length))].innerHTML = resultadoSeccao5;
 
+//Função para calcular Vidas
 function calcularVidas(){
     vidasJS -= 1;
     setTimeout(()=>{
@@ -89,6 +80,7 @@ function calcularVidas(){
     }, 3550);
 }
 
+//Funcção para calcular Pontos
 function calcularPontos(){
     pontosJS += 5;
     setTimeout(()=>{
@@ -109,6 +101,7 @@ function primeiraSeccao(botao){
     desabilitarProximaSeccao(botoesSeccao2, Seccoes[1]);
 }
 
+//Segunda Secção
 function segundaSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao2){
         respostaCerta(botao);
@@ -121,6 +114,7 @@ function segundaSeccao(botao){
     desabilitarProximaSeccao(botoesSeccao3, Seccoes[2])
 }
 
+//Terceira Secção
 function terceiraSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao3){
         respostaCerta(botao);
@@ -138,6 +132,7 @@ function terceiraSeccao(botao){
     }
 }
 
+//Quarta Secção
 function quartaSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao4){
         respostaCerta(botao);
@@ -155,6 +150,7 @@ function quartaSeccao(botao){
     }
 }
 
+//Quinta Secção
 function quintaSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao5){
         respostaCerta(botao);
@@ -170,41 +166,6 @@ function quintaSeccao(botao){
     }else{
         proximoNivel(pontosJS, vidasJS);
     }
-}
-
-//Criando Evento de clique da Primeira Secção
-for(const botoes of botoesSeccao1){
-    botoes.addEventListener("click", function(){
-        primeiraSeccao(this);
-    });
-}
-
-//Criando Evento de clique da Segunda Secçao
-for(const botoes of botoesSeccao2){
-    botoes.addEventListener("click", function(){
-        segundaSeccao(this);
-    })
-}
-
-//Criando Evento de clique da Terceira Secçao
-for(const botoes of botoesSeccao3){
-    botoes.addEventListener("click", function(){
-        terceiraSeccao(this);
-    })
-}
-
-//Criando Evento de clique da Quarta Secção
-for(const botoes of botoesSeccao4){
-    botoes.addEventListener("click", function(){
-        quartaSeccao(this);
-    });
-}
-
-//Criando Evento de clique da Quinta Secção
-for(const botoes of botoesSeccao5){
-    botoes.addEventListener("click", function(){
-        quintaSeccao(this);
-    })
 }
 
 //Função para aceitar Recomeçar o jogo
