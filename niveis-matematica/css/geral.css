@@ -132,6 +132,16 @@
     }
 }
 
+@keyframes janela{
+    0%{
+        transform: scale(1px);
+    }
+
+    100%{
+        transform: scale(60px);
+    }
+}
+
 :root{
     --cor0: #1B512D;
     --cor1: #455755;
@@ -231,8 +241,9 @@ main > section > article{
 
 main > section > article > p{
     align-items: center;
+    column-gap: 3px;
     display: grid;
-    grid-template-columns: 5% 95%;
+    grid-template-columns: 20px auto;
 }
 
 main > section > article > p > span{
@@ -281,6 +292,15 @@ main > section > a, main > section > button{
     width: 100%;
     z-index: 5;
 }
+/* 
+main > dialog#sair-categoria{
+
+    div#caixa-sair-categoria{
+        animation-name: janela;
+        animation-duration: 4s;
+        animation-timing-function: ease-in-out;
+    }
+} */
 
 main > dialog#game-over, dialog#proximo-nivel{
     border-radius: 10px;

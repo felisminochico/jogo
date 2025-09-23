@@ -1,17 +1,19 @@
 // console.log("Funcioanando...")
 
-if(window.performance.getEntriesByType("navigation")[0].type === "reload"){
-    sessionStorage.clear();
-    window.location.replace("../categorias.html");
-}
+// if(window.performance.getEntriesByType("navigation")[0].type === "reload"){
+//     sessionStorage.clear();
+//     window.location.replace("../categorias.html");
+// }
 
 //Recepção dos Pontos e Vidas do Nível 1
 let pontosJS2 = Number(sessionStorage.getItem("pontos"));
-let vidasJS2 = Number(sessionStorage.getItem("vidas")) + 3;
+let vidasJS2 = Number(sessionStorage.getItem("vidas")) + 1;
 pontosHTML.innerHTML = pontosJS2;
 vidasHTML.innerHTML = vidasJS2;
 
 //Variáveis Globais
+const aceitarRecomecarJogo = window.document.getElementById("aceitar-recomecar");
+const avancarNivel3 = window.document.getElementById("avancar-nivel-3");
 const vetorValoresSeccao3 = [[399, 19], [396, 18], [368, 23], [408, 17], [414, 23], [418, 19], [432, 16], [435, 15], [456, 19]];
 const vetorValoresSeccao6 = [[32, 8], [48, 6], [72, 12], [72, 6], [88, 8], [45, 5]];
 const vetorValoresSeccao7 = [[32, 8], [48, 6], [72, 12], [54, 6], [48, 8], [52, 4]];
@@ -288,3 +290,16 @@ function decimaSeccao(botao){
         proximoNivel(pontosJS2, vidasJS2);
     }
 }
+
+//Função para aceitar Recomeçar o Jogo
+aceitarRecomecarJogo.addEventListener("click", () =>{
+    sessionStorage.clear();
+    window.location.replace("nivel-1.html");
+})
+
+//Função para avançar no Nível 3
+avancarNivel3.addEventListener("click", ()=>{
+    sessionStorage.setItem("pontos", pontosJS2);
+    sessionStorage.setItem("vidas", vidasJS2);
+    window.location.replace("nivel-3.html");
+})

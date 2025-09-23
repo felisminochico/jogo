@@ -1,34 +1,17 @@
 @charset "UTF-8";
 
-main > section > article > p{
-    column-gap: 4px;
+header > h1{
+    font-size: 2.4em;
 }
 
-main > h1{
-    font-size: 1.5em;
+main > h2{
+    font-size: 1.6em;
 }
 
-main > section > h2{
-    font-size: 1.2em;
+main > section > h3{
+    font-size: 1.26em;
 }
 
-main > section#links{
-    display: flex;
-    flex-direction: column;
-    gap: 15px 0px;
-}
-
-div#janela-recomecar-jogo{
-    place-content: center;
-    display: grid;
-    grid-template-columns: 300px;
-    grid-template-rows: 100px;
-    min-height: 286vh;
-}
-
-div#container-recomecar-jogo{
-    background-color: white;
-    border-radius: 10px;
-    line-height: 1.5em;
-    padding: 10px;
+main > section > article > p > button{
+    font-size: 0.96em;
 }
