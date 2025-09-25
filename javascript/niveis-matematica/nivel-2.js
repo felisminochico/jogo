@@ -295,7 +295,7 @@ function decimaSeccao(botao){
 aceitarRecomecarJogo.addEventListener("click", () =>{
     sessionStorage.clear();
     window.location.replace("nivel-1.html");
-})
+});
 
 //Função para avançar no Nível 3
 avancarNivel3.addEventListener("click", ()=>{

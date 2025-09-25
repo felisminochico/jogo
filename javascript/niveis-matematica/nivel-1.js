@@ -178,4 +178,4 @@ avancarNivel2.addEventListener("click", ()=>{
     sessionStorage.setItem("pontos", pontosJS);
     sessionStorage.setItem("vidas", vidasJS);
     window.location.replace("nivel-2.html");
-})
+});
