@@ -13,6 +13,7 @@ categoriaMatematica.addEventListener("click", () =>{
 })
 
 function mostrarJanelaNaoDisponivel(){
+    janelaNaoDisponivel.style.animation = "janela 0.5s forwards";
     janelaNaoDisponivel.showModal();
 }
 

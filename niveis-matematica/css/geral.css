@@ -133,12 +133,12 @@
 }
 
 @keyframes janela{
-    0%{
-        transform: scale(1px);
+    from{
+        transform: scale(0);
     }
 
-    100%{
-        transform: scale(60px);
+    to{
+        transform: scale(1);
     }
 }
 
@@ -329,6 +329,7 @@ main > dialog#game-over, dialog#proximo-nivel{
             justify-content: end;
 
             span{
+                border-radius: 5px;
                 color: white;
                 cursor: pointer;
                 padding: 12px 0px;
@@ -337,11 +338,11 @@ main > dialog#game-over, dialog#proximo-nivel{
             }
 
             span#aceitar-recomecar{
-                background-color: darkblue;
+                background-color: var(--cor4);
             }
 
             span#nao-aceitar-recomecar{
-                background-color: darkred;
+                background-color: var(--cor1);
             }
         }
     }
@@ -385,6 +386,7 @@ main > dialog#sair-categoria{
             justify-content: end;
 
             span{
+                border-radius: 5px;
                 cursor: pointer;
                 padding: 10px 0px;
                 text-align: center;
@@ -392,11 +394,11 @@ main > dialog#sair-categoria{
             }
 
             span#aceitar-sair-categoria{
-                background: darkblue;
+                background: var(--cor4);
             }
 
             span#nao-aceitar-sair-categoria{
-                background-color: darkred;
+                background-color: var(--cor1);
             }
         }
     }

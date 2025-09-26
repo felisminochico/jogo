@@ -13,6 +13,11 @@ const valoresSeccao7 = window.document.querySelectorAll("#valores-seccao-7 span"
 const valoresSeccao8 = window.document.querySelectorAll("#valores-seccao-8 span");
 const valoresSeccao9 = window.document.querySelectorAll("#valores-seccao-9 span");
 const valoresSeccao10 = window.document.querySelectorAll("#valores-seccao-10 span");
+const valoresSeccao11 = window.document.querySelectorAll("#valores-seccao-11 span");
+const valoresSeccao12 = window.document.querySelectorAll("#valores-seccao-12 span");
+const valoresSeccao13 = window.document.querySelectorAll("#valores-seccao-13 span");
+const valoresSeccao14 = window.document.querySelectorAll("#valores-seccao-14 span");
+const valoresSeccao15 = window.document.querySelectorAll("#valores-seccao-15 span");
 const botoesSeccao1 = window.document.getElementsByClassName('btn-primeira-seccao');
 const botoesSeccao2 = window.document.getElementsByClassName('btn-segunda-seccao');
 const botoesSeccao3 = window.document.getElementsByClassName('btn-terceira-seccao');
@@ -23,6 +28,11 @@ const botoesSeccao7 = window.document.getElementsByClassName("btn-setima-seccao"
 const botoesSeccao8 = window.document.getElementsByClassName("btn-oitava-seccao");
 const botoesSeccao9 = window.document.getElementsByClassName("btn-nona-seccao");
 const botoesSeccao10 = window.document.getElementsByClassName("btn-decima-seccao");
+const botoesSeccao11 = window.document.getElementsByClassName("btn-seccao-11");
+const botoesSeccao12 = window.document.getElementsByClassName("btn-seccao-12");
+const botoesSeccao13 = window.document.getElementsByClassName("btn-seccao-13");
+const botoesSeccao14 = window.document.getElementsByClassName("btn-seccao-14");
+const botoesSeccao15 = window.document.getElementsByClassName("btn-seccao-15");
 const todosBotoesSeccoes = window.document.querySelectorAll(".seccoes button");
 const caixaGameOver = window.document.getElementById("game-over");
 let posicaoAtualNav = nav.offsetTop;
@@ -149,6 +159,7 @@ for(const botoes of botoesSeccao10){
 
 //Janela Sair Categoria
 function janelaSairCategoria(){
+    caixaSairCategoria.style.animation = "janela 0.5s forwards";
     caixaSairCategoria.showModal();
     window.document.body.style.overflow = "hidden";
 }
@@ -159,6 +170,7 @@ negarSairCategoria.addEventListener("click", ()=>{
 })
 
 aceitarSairCategoria.addEventListener("click", ()=>{
+    sessionStorage.clear();
     window.location.replace("../categorias.html");
 })
 
@@ -169,6 +181,7 @@ botaoSairCategoria.addEventListener("click", ()=>{
 //Janela do Game Over
 function gameOver(){
     setTimeout(()=>{
+        caixaGameOver.style.animation = "janela 0.5s forwards";
         caixaGameOver.showModal();
         window.document.body.style.overflow = "hidden";
     }, 5000);
@@ -177,6 +190,7 @@ function gameOver(){
 //Janela do Nível 2
 function proximoNivel(pts, vds){
     setTimeout(()=>{
+        caixaNivel2.style.animation = "janela 0.5s forwards";
         caixaNivel2.showModal();
         window.document.body.style.overflow = "hidden";
         pontosFinal.innerHTML = `Pontos: <strong>${pts}</strong>`;
@@ -208,7 +222,9 @@ function respostaCerta(botao){
     // }, 3600);
 }
 
+//Função para negar recomeçar o Jogo
 negarRecomecarJogo.addEventListener("click", ()=>{
+    sessionStorage.clear();
     window.location.replace("../categorias.html");
 });
 
