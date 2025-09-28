@@ -5,7 +5,7 @@ let vidasJS = 3;
 let Artigos = window.document.getElementsByTagName('article');
 const aceitarRecomecarJogo = window.document.getElementById("aceitar-recomecar");
 const avancarNivel2 = window.document.getElementById("avancar-nivel-2");
-const vetorValoresSeccao3 = [[54, 6], [48, 8], [52, 4], [42, 6], [64, 4]];
+// const vetorValoresSeccao3 = [[54, 6], [48, 8], [52, 4], [42, 6], [64, 4]];
 
 //Habilitação da Secção 1
 for(const botoes of botoesSeccao1){
@@ -33,6 +33,18 @@ function mudancaValores(resultado, btnSeccao){
     }    
 }
 
+function mudarValoresQuestoes(n1, n2){
+    n1.innerHTML = Number(Math.floor(Math.random() * ((80 - 40) + 1) + 40))
+    n2.innerHTML = Number(Math.floor(Math.random() * ((9 - 5) + 1) + 5));
+    let res = Number(n1.innerHTML) / Number(n2.innerHTML)
+
+    if(Number.isInteger(res) === false){
+        mudarValoresQuestoes(n1, n2);
+    }else{
+        console.log("O resultado é exato.");
+    }
+}
+
 //Mudança de Valores da Seccão 1
 valoresSeccao1[0].innerHTML = Number(Math.floor(Math.random() * ((8 - 4) + 1) + 4));
 valoresSeccao1[1].innerHTML = Number(Math.floor(Math.random() * ((8 - 4) + 1) + 4));
@@ -48,11 +60,12 @@ mudancaValores(resultadoSeccao2, botoesSeccao2);
 botoesSeccao2[Number(Math.floor(Math.random() * botoesSeccao1.length))].innerHTML = resultadoSeccao2;
 
 //Mudança da Secção 3
-let c = 0;
-for(const v of vetorValoresSeccao3[Number(Math.floor(Math.random() * vetorValoresSeccao3.length))]){
-    valoresSeccao3[c].innerHTML = Number(v)
-    c++;
-}
+// let c = 0;
+// for(const v of vetorValoresSeccao3[Number(Math.floor(Math.random() * vetorValoresSeccao3.length))]){
+//     valoresSeccao3[c].innerHTML = Number(v)
+//     c++;
+// }
+mudarValoresQuestoes(valoresSeccao3[0], valoresSeccao3[1]);
 let resultadoSeccao3 = Number(valoresSeccao3[0].innerHTML) / Number(valoresSeccao3[1].innerHTML);
 mudancaValores(resultadoSeccao3, botoesSeccao3);
 botoesSeccao3[Number(Math.floor(Math.random() * botoesSeccao3.length))].innerHTML = resultadoSeccao3;

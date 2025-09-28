@@ -140,3 +140,17 @@ aceitarRecomecarJogo.addEventListener("click", () =>{
 for(const botoes of todosBotoesSeccoes){
     botoes.innerHTML = Number(botoes.innerHTML).toLocaleString("pt-AO");
 }
+
+function teste(){
+    let n1 = Number(Math.floor(Math.random() * ((860 - 600) + 1) + 600));
+    let n2 = Number(Math.floor(Math.random() * ((40 - 14) + 1) + 14));
+    let res = n1 / n2
+
+    if(Number.isInteger(res) === false || res < 40){
+        teste()
+    }else{
+        console.log(`${n1} / ${n2} = ${res}`)
+    }
+}
+
+teste()
