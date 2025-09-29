@@ -60,6 +60,19 @@ anoAtual.innerHTML = "\u00A9 " + new Date().toLocaleString(linguagemLocal, {year
 //     secc.style.opacity = "0.1";
 // }
 
+//Função que muda os valores das Questões
+function mudarValoresQuestoes(dividendo, divisor, dividendoMax, dividendoMin, divisorMax, divisorMin, resultadoMin){
+    dividendo.innerHTML = Number(Math.floor(Math.random() * ((dividendoMax - dividendoMin) + 1) + dividendoMin))
+    divisor.innerHTML = Number(Math.floor(Math.random() * ((divisorMax - divisorMin) + 1) + divisorMin));
+    let res = Number(dividendo.innerHTML) / Number(divisor.innerHTML)
+
+    if(Number.isInteger(res) === false || res < resultadoMin){
+        mudarValoresQuestoes(dividendo, divisor, dividendoMax, dividendoMin, divisorMax, divisorMin, resultadoMin);
+    }else{
+        console.log("O resultado é exato.");
+    }
+}
+
 //Função que muda os valores dos Botões
 function mudancaValores2(res, btnSeccao){
     for(c = 0; c < btnSeccao.length; c++){
@@ -258,4 +271,4 @@ function desabilitarProximaSeccao(btnSeccao, seccao){
             botoes.style.cursor = "pointer";
         }
     }, 5000);
-}
+}   

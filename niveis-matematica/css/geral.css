@@ -260,22 +260,22 @@ main > section > article > p > button{
     padding: 10px 0px;
 }
 
-main > section#links{
+/* main > section#links{
     margin: 30px 0px 10px 0px;
     padding: 10px 20px;
-}
+} */
 
-main > section#links > a{
+/* main > section#links > a{
     background-color: var(--cor2);
     display: block;
     text-decoration: none;
-}
+} */
 
-main > section#links > #btn-recomecar{
+/* main > section#links > #btn-recomecar{
     background-color: var(--cor0);
-} 
+}  */
 
-main > section > a, main > section > button{
+/* main > section > a, main > section > button{
     border-radius: 10px;
     color: white;
     cursor: pointer;
@@ -283,7 +283,7 @@ main > section > a, main > section > button{
     padding: 16px 10px;
     text-align: center;
     width: 100%;
-}
+} */
 
 .fixo{
     background-color: var(--cor2);
@@ -353,7 +353,7 @@ main > dialog#game-over::backdrop, dialog#sair-categoria::backdrop, dialog#proxi
 }
 
 main > div#link-sair-categoria{
-    margin: auto;
+    margin: 36px auto 0px auto;
     text-align: end;
     width: 90%;
 
@@ -363,7 +363,7 @@ main > div#link-sair-categoria{
         border-radius: 7px;
         color: white;
         cursor: pointer;
-        padding: 14px 8px;
+        padding: 18px 8px;
         width: 180px;
     }
 }
@@ -376,8 +376,15 @@ main > dialog#sair-categoria{
     #caixa-sair-categoria{
         display: grid;
         align-content: space-between;
-        min-height: 120px;
+        min-height: 140px;
         padding: 10px;
+
+        #conteudo-sair-categoria{
+
+            p{
+                line-height: 1.5em;
+            }
+        }
 
         #opcao-sair-categoria{
             display: flex;

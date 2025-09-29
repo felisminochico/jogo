@@ -9,5 +9,9 @@ main > h2{
 }
 
 main > section > h3{
-    font-size: 1.36em;
+    font-size: 1.1em;
+}
+
+main > section > article > p > button{
+    font-size: 0.96em;
 }

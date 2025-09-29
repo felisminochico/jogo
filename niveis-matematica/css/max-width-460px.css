@@ -9,9 +9,13 @@ main > h2{
 }
 
 main > section > h3{
-    font-size: 1.26em;
+    font-size: 1em;
 }
 
 main > section > article > p > button{
-    font-size: 0.96em;
+    font-size: 0.9em;
+}
+
+main > div#link-sair-categoria > button{
+    width: 100%;
 }
