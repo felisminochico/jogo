@@ -8,10 +8,6 @@ vidasHTML.innerHTML = vidasJS3;
 //Variáveis Globais
 const aceitarRecomecarJogo = window.document.getElementById("aceitar-recomecar");
 const avancarNivel4 = window.document.getElementById("avancar-nivel-4");
-// const vetorValoresSeccao3 = [[616, 14], [616, 14], [728, 14], [714, 14], [600, 15], [615, 15], [735, 15], [765, 15], [621, 27], [648, 27], [729, 27], [783, 27], [620, 31], [651, 31], [744, 31], [775, 31]];
-// const vetorValoresSeccao6 = [[612, 18], [630, 18], [648, 18], [720, 18], [627, 33], [660, 33], [726, 33], [759, 33], [608, 38], [646, 38], [684, 38], [798, 38]];
-// const vetorValoresSeccao8 = [[616, 14], [616, 14], [728, 14], [714, 14], [600, 15], [615, 15], [735, 15], [765, 15], [726, 33], [759, 33], [608, 38], [646, 38], [684, 38], [798, 38]];//Não feito ainda...
-// const vetorValoresSeccao11 = [[616, 14], [616, 14], [728, 14], [714, 14], [600, 15], [615, 15], [735, 15], [765, 15], [726, 33], [759, 33], [608, 38], [646, 38], [684, 38], [798, 38]];//Não feito ainda...
 
 //Desabilitação da Primeira Secção
 for(const botoes of botoesSeccao1){
@@ -35,11 +31,6 @@ mudancaValores2(resultadoSeccao2, botoesSeccao2);
 botoesSeccao2[Number(Math.floor(Math.random() * botoesSeccao2.length))].innerHTML = resultadoSeccao2;
 
 //Mudança de Valores da Secção 3
-// let t = 0;
-// for(let vet of vetorValoresSeccao3[Number(Math.floor(Math.random() * vetorValoresSeccao3.length))]){
-//     valoresSeccao3[t].innerHTML = Number(vet);
-//     t += 1;
-// }
 mudarValoresQuestoes(valoresSeccao3[0], valoresSeccao3[1], 790, 600, 33, 14, 30);
 let resultadoSeccao3 = Number(valoresSeccao3[0].innerHTML) / Number(valoresSeccao3[1].innerHTML)
 mudancaValores2(resultadoSeccao3, botoesSeccao3);
@@ -61,11 +52,6 @@ mudancaValores2(resultadoSeccao5, botoesSeccao5);
 botoesSeccao5[Number(Math.floor(Math.random() * botoesSeccao5.length))].innerHTML = resultadoSeccao5;
 
 //Mudança de Valores da Secção 6
-// t = 0;
-// for(let vet of vetorValoresSeccao6[Number(Math.floor(Math.random() * vetorValoresSeccao6.length))]){
-//     valoresSeccao6[t].innerHTML = Number(vet);
-//     t += 1;
-// }
 mudarValoresQuestoes(valoresSeccao6[0], valoresSeccao6[1], 740, 500, 32, 14, 30);
 valoresSeccao6[2].innerHTML = Number(Math.floor(Math.random() * ((373 - 264) + 1) + 264));
 let resultadoSeccao6 = (Number(valoresSeccao6[0].innerHTML) / Number(valoresSeccao6[1].innerHTML)) + Number(valoresSeccao6[2].innerHTML);
@@ -81,11 +67,6 @@ mudancaValores2(resultadoSeccao7, botoesSeccao7);
 botoesSeccao7[Number(Math.floor(Math.random() * botoesSeccao7.length))].innerHTML = resultadoSeccao7;
 
 //Mudança de Valores da Secção 8
-// t = 0
-// for(let vet of vetorValoresSeccao8[Number(Math.floor(Math.random() * vetorValoresSeccao8.length))]){
-//     valoresSeccao8[t].innerHTML = Number(vet);
-//     t += 1;
-// }
 mudarValoresQuestoes(valoresSeccao8[0], valoresSeccao8[1], 800, 600, 36, 14, 36);
 valoresSeccao8[2].innerHTML = Number(Math.floor(Math.random() * ((23 - 7) + 1) + 7));
 let resultadoSeccao8 = (Number(valoresSeccao8[0].innerHTML) / Number(valoresSeccao8[1].innerHTML)) - Number(valoresSeccao8[2].innerHTML);
@@ -110,11 +91,6 @@ botoesSeccao10[Number(Math.floor(Math.random() * botoesSeccao10.length))].innerH
 
 //Mudança de Valores da Secção 11
 valoresSeccao11[0].innerHTML = Number(Math.floor(Math.random() * ((47 - 32) + 1) + 32));
-// t = 1;
-// for(let vet of vetorValoresSeccao11[Number(Math.floor(Math.random() * vetorValoresSeccao11.length))]){
-//     valoresSeccao11[t].innerHTML = Number(vet);
-//     t += 1;
-// }
 mudarValoresQuestoes(valoresSeccao11[1], valoresSeccao11[2], 800, 500, 34, 13, 20);
 let resultadoSeccao11 = Number(valoresSeccao11[0].innerHTML) * (Number(valoresSeccao11[1].innerHTML) / Number(valoresSeccao11[2].innerHTML));
 mudancaValores2(resultadoSeccao11, botoesSeccao11);
@@ -153,21 +129,176 @@ mudancaValores2(resultadoSeccao15, botoesSeccao15);
 botoesSeccao15[Number(Math.floor(Math.random() * botoesSeccao15.length))].innerHTML = resultadoSeccao15;
 console.log(resultadoSeccao15);
 
+//Função para calcular pontos
+function calcularPontos(){
+    pontosJS3 += 15;
+    setTimeout(()=>{
+        pontosHTML.innerHTML = pontosJS3;
+    }, 3550);
+}
+
+//Função para calcular Vidas
+function calcularVidas(){
+    vidasJS3 -= 1;
+    setTimeout(()=>{
+        vidasHTML.innerHTML = vidasJS3;
+    }, 3550);
+}
+
 function primeiraSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao1){
-        alert("Resposta Certa!");
+        respostaCerta(botao);
+        calcularPontos();
     }else{
-        alert("Resposta Errada.");
+        respostaErrada(botao, botoesSeccao1, resultadoSeccao1);
     }
 }
 
 function segundaSeccao(botao){
     if(Number(botao.innerHTML) === resultadoSeccao2){
-        alert("Resposta Certa!");
+        respostaCerta(botao);
+        calcularPontos();
     }else{
-        alert("Resposta Errada.");
+        respostaErrada(botao, botoesSeccao2, resultadoSeccao2);
+        calcularVidas();
     }
 }
+
+function terceiraSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao3){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao3, resultadoSeccao3);
+        calcularVidas();
+    }
+    // desabilitarBotoesAtuais(botoesSeccao3);
+
+    // if(vidasJS2 < 1){
+    //     gameOver();
+    // }else{
+    //     desabilitarProximaSeccao(botoesSeccao4, Seccoes[3]);
+    // }
+}
+
+// function quartaSeccao(botao){
+//     if(Number(botao.innerHTML) === resultadoSeccao4){
+//         respostaCerta(botao);
+//         calcularPontos();
+//     }else{
+//         respostaErrada(botao, botoesSeccao4, resultadoSeccao4);
+//         calcularVidas();
+//     }
+//     desabilitarBotoesAtuais(botoesSeccao4);
+
+//     if(vidasJS2 < 1){
+//         gameOver();
+//     }else{
+//         desabilitarProximaSeccao(botoesSeccao5, Seccoes[4]);
+//     }
+// }
+
+// function quintaSeccao(botao){
+//     if(Number(botao.innerHTML) === resultadoSeccao5){
+//         respostaCerta(botao);
+//         calcularPontos();
+//     }else{
+//         respostaErrada(botao, botoesSeccao5, resultadoSeccao5);
+//         calcularVidas();
+//     }
+//     desabilitarBotoesAtuais(botoesSeccao5);
+
+//     if(vidasJS2 < 1){
+//         gameOver();
+//     }else{
+//         desabilitarProximaSeccao(botoesSeccao6, Seccoes[5]);
+//     }
+// }
+
+// function sextaSeccao(botao){
+//     if(Number(botao.innerHTML) === resultadoSeccao6){
+//         respostaCerta(botao);
+//         calcularPontos();
+//     }else{
+//         respostaErrada(botao, botoesSeccao6, resultadoSeccao6);
+//         calcularVidas();
+//     }
+//     desabilitarBotoesAtuais(botoesSeccao6);
+
+//     if(vidasJS2 < 1){
+//         gameOver();
+//     }else{
+//         desabilitarProximaSeccao(botoesSeccao7, Seccoes[6]);
+//     }
+// }
+
+// function setimaSeccao(botao){
+//     if(Number(botao.innerHTML) === resultadoSeccao7){
+//         respostaCerta(botao);
+//         calcularPontos();
+//     }else{
+//         respostaErrada(botao, botoesSeccao7, resultadoSeccao7);
+//         calcularVidas();
+//     }
+//     desabilitarBotoesAtuais(botoesSeccao7);
+
+//     if(vidasJS2 < 1){
+//         gameOver();
+//     }else{
+//         desabilitarProximaSeccao(botoesSeccao8, Seccoes[7]);
+//     }
+// }
+
+// function oitavaSeccao(botao){
+//     if(Number(botao.innerHTML) === resultadoSeccao8){
+//         respostaCerta(botao);
+//         calcularPontos();
+//     }else{
+//         respostaErrada(botao, botoesSeccao8, resultadoSeccao8);
+//         calcularVidas();
+//     }
+//     desabilitarBotoesAtuais(botoesSeccao8);
+
+//     if(vidasJS2 < 1){
+//         gameOver();
+//     }else{
+//         desabilitarProximaSeccao(botoesSeccao9, Seccoes[8]);
+//     }
+// }
+
+// function nonaSeccao(botao){
+//     if(Number(botao.innerHTML) === resultadoSeccao9){
+//         respostaCerta(botao);
+//         calcularPontos();
+//     }else{
+//         respostaErrada(botao, botoesSeccao9, resultadoSeccao9);
+//         calcularVidas();
+//     }
+//     desabilitarBotoesAtuais(botoesSeccao9);
+
+//     if(vidasJS2 < 1){
+//         gameOver();
+//     }else{
+//         desabilitarProximaSeccao(botoesSeccao10, Seccoes[9]);
+//     }
+// }
+
+// function decimaSeccao(botao){
+//     if(Number(botao.innerHTML) === resultadoSeccao10){
+//         respostaCerta(botao);
+//         calcularPontos();
+//     }else{
+//         respostaErrada(botao, botoesSeccao10, resultadoSeccao10);
+//         calcularVidas();
+//     }
+//     desabilitarBotoesAtuais(botoesSeccao10);
+
+//     if(vidasJS2 < 1){
+//         gameOver();
+//     }else{
+//         proximoNivel(pontosJS2, vidasJS2);
+//     }
+// }
 
 //Função para aceitar Recomeçar o Jogo
 aceitarRecomecarJogo.addEventListener("click", () =>{

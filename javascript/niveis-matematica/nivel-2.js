@@ -14,10 +14,6 @@ vidasHTML.innerHTML = vidasJS2;
 //Variáveis Globais
 const aceitarRecomecarJogo = window.document.getElementById("aceitar-recomecar");
 const avancarNivel3 = window.document.getElementById("avancar-nivel-3");
-// const vetorValoresSeccao3 = [[399, 19], [396, 18], [368, 23], [408, 17], [414, 23], [418, 19], [432, 16], [435, 15], [456, 19]];
-// const vetorValoresSeccao6 = [[32, 8], [48, 6], [72, 12], [72, 6], [88, 8], [45, 5]];
-// const vetorValoresSeccao7 = [[32, 8], [48, 6], [72, 12], [54, 6], [48, 8], [52, 4]];
-// const vetorValoresSeccao10 = [[32, 8], [48, 6], [72, 12], [54, 6], [48, 8], [52, 4]];
 
 //Desabilitação da Secção 1
 for(const botoes of botoesSeccao1){
@@ -41,11 +37,6 @@ mudancaValores2(resultadoSeccao2, botoesSeccao2);
 botoesSeccao2[Number(Math.floor(Math.random() * botoesSeccao2.length))].innerHTML = resultadoSeccao2;
 
 //Mudança de Valors da Secção 3
-// let t = 0
-// for(const vet of vetorValoresSeccao3[Number(Math.floor(Math.random() * vetorValoresSeccao3.length))]){
-//     valoresSeccao3[t].innerHTML = Number(vet);
-//     t += 1;
-// }
 mudarValoresQuestoes(valoresSeccao3[0], valoresSeccao3[1], 520, 300, 30, 14, 20);
 let resultadoSeccao3 = valoresSeccao3[0].innerHTML / valoresSeccao3[1].innerHTML;
 mudancaValores2(resultadoSeccao3, botoesSeccao3);
