@@ -127,7 +127,7 @@ valoresSeccao15[4].innerHTML = Number(Math.floor(Math.random() * ((497 - 325) + 
 let resultadoSeccao15 = (Number(valoresSeccao15[0].innerHTML) * (Number(valoresSeccao15[1].innerHTML) / Number(valoresSeccao15[2].innerHTML))) + (Number(valoresSeccao15[3].innerHTML) - Number(valoresSeccao15[4].innerHTML));
 mudancaValores2(resultadoSeccao15, botoesSeccao15);
 botoesSeccao15[Number(Math.floor(Math.random() * botoesSeccao15.length))].innerHTML = resultadoSeccao15;
-console.log(resultadoSeccao15);
+console.log(resultadoSeccao5);
 
 //Função para calcular pontos
 function calcularPontos(){
@@ -152,6 +152,13 @@ function primeiraSeccao(botao){
     }else{
         respostaErrada(botao, botoesSeccao1, resultadoSeccao1);
     }
+    desabilitarBotoesAtuais(botoesSeccao1);
+
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao2, Seccoes[1]);
+    }
 }
 
 function segundaSeccao(botao){
@@ -161,6 +168,13 @@ function segundaSeccao(botao){
     }else{
         respostaErrada(botao, botoesSeccao2, resultadoSeccao2);
         calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao2);
+
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao3, Seccoes[2]);
     }
 }
 
@@ -172,140 +186,225 @@ function terceiraSeccao(botao){
         respostaErrada(botao, botoesSeccao3, resultadoSeccao3);
         calcularVidas();
     }
-    // desabilitarBotoesAtuais(botoesSeccao3);
+    desabilitarBotoesAtuais(botoesSeccao3);
 
-    // if(vidasJS2 < 1){
-    //     gameOver();
-    // }else{
-    //     desabilitarProximaSeccao(botoesSeccao4, Seccoes[3]);
-    // }
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao4, Seccoes[3]);
+    }
 }
 
-// function quartaSeccao(botao){
-//     if(Number(botao.innerHTML) === resultadoSeccao4){
-//         respostaCerta(botao);
-//         calcularPontos();
-//     }else{
-//         respostaErrada(botao, botoesSeccao4, resultadoSeccao4);
-//         calcularVidas();
-//     }
-//     desabilitarBotoesAtuais(botoesSeccao4);
+function quartaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao4){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao4, resultadoSeccao4);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao4);
 
-//     if(vidasJS2 < 1){
-//         gameOver();
-//     }else{
-//         desabilitarProximaSeccao(botoesSeccao5, Seccoes[4]);
-//     }
-// }
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao5, Seccoes[4]);
+    }
+}
 
-// function quintaSeccao(botao){
-//     if(Number(botao.innerHTML) === resultadoSeccao5){
-//         respostaCerta(botao);
-//         calcularPontos();
-//     }else{
-//         respostaErrada(botao, botoesSeccao5, resultadoSeccao5);
-//         calcularVidas();
-//     }
-//     desabilitarBotoesAtuais(botoesSeccao5);
+function quintaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao5){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao5, resultadoSeccao5);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao5);
 
-//     if(vidasJS2 < 1){
-//         gameOver();
-//     }else{
-//         desabilitarProximaSeccao(botoesSeccao6, Seccoes[5]);
-//     }
-// }
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao6, Seccoes[5]);
+    }
+}
 
-// function sextaSeccao(botao){
-//     if(Number(botao.innerHTML) === resultadoSeccao6){
-//         respostaCerta(botao);
-//         calcularPontos();
-//     }else{
-//         respostaErrada(botao, botoesSeccao6, resultadoSeccao6);
-//         calcularVidas();
-//     }
-//     desabilitarBotoesAtuais(botoesSeccao6);
+function sextaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao6){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao6, resultadoSeccao6);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao6);
 
-//     if(vidasJS2 < 1){
-//         gameOver();
-//     }else{
-//         desabilitarProximaSeccao(botoesSeccao7, Seccoes[6]);
-//     }
-// }
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao7, Seccoes[6]);
+    }
+}
 
-// function setimaSeccao(botao){
-//     if(Number(botao.innerHTML) === resultadoSeccao7){
-//         respostaCerta(botao);
-//         calcularPontos();
-//     }else{
-//         respostaErrada(botao, botoesSeccao7, resultadoSeccao7);
-//         calcularVidas();
-//     }
-//     desabilitarBotoesAtuais(botoesSeccao7);
+function setimaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao7){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao7, resultadoSeccao7);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao7);
 
-//     if(vidasJS2 < 1){
-//         gameOver();
-//     }else{
-//         desabilitarProximaSeccao(botoesSeccao8, Seccoes[7]);
-//     }
-// }
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao8, Seccoes[7]);
+    }
+}
 
-// function oitavaSeccao(botao){
-//     if(Number(botao.innerHTML) === resultadoSeccao8){
-//         respostaCerta(botao);
-//         calcularPontos();
-//     }else{
-//         respostaErrada(botao, botoesSeccao8, resultadoSeccao8);
-//         calcularVidas();
-//     }
-//     desabilitarBotoesAtuais(botoesSeccao8);
+function oitavaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao8){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao8, resultadoSeccao8);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao8);
 
-//     if(vidasJS2 < 1){
-//         gameOver();
-//     }else{
-//         desabilitarProximaSeccao(botoesSeccao9, Seccoes[8]);
-//     }
-// }
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao9, Seccoes[8]);
+    }
+}
 
-// function nonaSeccao(botao){
-//     if(Number(botao.innerHTML) === resultadoSeccao9){
-//         respostaCerta(botao);
-//         calcularPontos();
-//     }else{
-//         respostaErrada(botao, botoesSeccao9, resultadoSeccao9);
-//         calcularVidas();
-//     }
-//     desabilitarBotoesAtuais(botoesSeccao9);
+function nonaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao9){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao9, resultadoSeccao9);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao9);
 
-//     if(vidasJS2 < 1){
-//         gameOver();
-//     }else{
-//         desabilitarProximaSeccao(botoesSeccao10, Seccoes[9]);
-//     }
-// }
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao10, Seccoes[9]);
+    }
+}
 
-// function decimaSeccao(botao){
-//     if(Number(botao.innerHTML) === resultadoSeccao10){
-//         respostaCerta(botao);
-//         calcularPontos();
-//     }else{
-//         respostaErrada(botao, botoesSeccao10, resultadoSeccao10);
-//         calcularVidas();
-//     }
-//     desabilitarBotoesAtuais(botoesSeccao10);
+function decimaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao10){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao10, resultadoSeccao10);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao10);
 
-//     if(vidasJS2 < 1){
-//         gameOver();
-//     }else{
-//         proximoNivel(pontosJS2, vidasJS2);
-//     }
-// }
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao11, Seccoes[10]);
+    }
+}
+
+function decimaPrimeiraSeccao(botao){
+    if(Number(botao.innerHTML) == resultadoSeccao11){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao11, resultadoSeccao11);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao11);
+
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao12, Seccoes[11]);
+    }
+}
+
+function decimaSegundaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao12){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao12, resultadoSeccao12);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao12);
+
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao13, Seccoes[12]);
+    }
+}
+
+function decimaTerceiraSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao13){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao13, resultadoSeccao13);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao13);
+
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao14, Seccoes[13]);
+    }
+}
+
+function decimaQuartaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao14){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao14, resultadoSeccao14);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao14);
+
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        desabilitarProximaSeccao(botoesSeccao15, Seccoes[14]);
+    }
+}
+
+function decimaQuintaSeccao(botao){
+    if(Number(botao.innerHTML) === resultadoSeccao15){
+        respostaCerta(botao);
+        calcularPontos();
+    }else{
+        respostaErrada(botao, botoesSeccao15, resultadoSeccao15);
+        calcularVidas();
+    }
+    desabilitarBotoesAtuais(botoesSeccao15);
+
+    if(vidasJS3 < 1){
+        gameOver();
+    }else{
+        proximoNivel(pontosJS3, vidasJS3);
+    }
+}
 
 //Função para aceitar Recomeçar o Jogo
 aceitarRecomecarJogo.addEventListener("click", () =>{
     sessionStorage.clear();
     window.location.replace("nivel-1.html");
 });
-
+resultadoSeccao11 = Number(resultadoSeccao11).toLocaleString("pt-AO");
 for(const botoes of todosBotoesSeccoes){
     botoes.innerHTML = Number(botoes.innerHTML).toLocaleString("pt-AO");
 }
@@ -323,3 +422,4 @@ function teste(){
 }
 
 teste()
+console.log(Number(1897) === Number("1897").toLocaleString("pt-AO"))

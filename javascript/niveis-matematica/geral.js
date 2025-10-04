@@ -170,6 +170,41 @@ for(const botoes of botoesSeccao10){
     });
 }
 
+//Criando Evento de clique da Décima Primeira Secção
+for(const botoes of botoesSeccao11){
+    botoes.addEventListener("click", function(){
+        decimaPrimeiraSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Décima Segunda Secção
+for(const botoes of botoesSeccao12){
+    botoes.addEventListener("click", function(){
+        decimaSegundaSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Décima Terceira Secção
+for(const botoes of botoesSeccao13){
+    botoes.addEventListener("click", function(){
+        decimaTerceiraSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Décima Quarta Secção
+for(const botoes of botoesSeccao14){
+    botoes.addEventListener("click", function(){
+        decimaQuartaSeccao(this);
+    });
+}
+
+//Criando Evento de clique da Décima Quinta Secção
+for(const botoes of botoesSeccao15){
+    botoes.addEventListener("click", function(){
+        decimaQuintaSeccao(this);
+    });
+}
+
 //Janela Sair Categoria
 function janelaSairCategoria(){
     caixaSairCategoria.style.animation = "janela 0.5s forwards";
