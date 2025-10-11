@@ -94,7 +94,7 @@ valoresSeccao11[0].innerHTML = Number(Math.floor(Math.random() * ((47 - 32) + 1)
 mudarValoresQuestoes(valoresSeccao11[1], valoresSeccao11[2], 800, 500, 34, 13, 20);
 let resultadoSeccao11 = Number(valoresSeccao11[0].innerHTML) * (Number(valoresSeccao11[1].innerHTML) / Number(valoresSeccao11[2].innerHTML));
 mudancaValores2(resultadoSeccao11, botoesSeccao11);
-botoesSeccao11[Number(Math.floor(Math.random() * botoesSeccao11.length))].innerHTML = resultadoSeccao11;
+botoesSeccao11[Number(Math.floor(Math.random() * botoesSeccao11.length))].textContent = resultadoSeccao11;
 
 //Mudança de Valores da Secção 12
 mudarValoresQuestoes(valoresSeccao12[0], valoresSeccao12[1], 800, 560, 32, 14, 16);
@@ -127,7 +127,7 @@ valoresSeccao15[4].innerHTML = Number(Math.floor(Math.random() * ((497 - 325) + 
 let resultadoSeccao15 = (Number(valoresSeccao15[0].innerHTML) * (Number(valoresSeccao15[1].innerHTML) / Number(valoresSeccao15[2].innerHTML))) + (Number(valoresSeccao15[3].innerHTML) - Number(valoresSeccao15[4].innerHTML));
 mudancaValores2(resultadoSeccao15, botoesSeccao15);
 botoesSeccao15[Number(Math.floor(Math.random() * botoesSeccao15.length))].innerHTML = resultadoSeccao15;
-console.log(resultadoSeccao5);
+console.log(resultadoSeccao11);
 
 //Função para calcular pontos
 function calcularPontos(){
@@ -315,7 +315,7 @@ function decimaSeccao(botao){
 }
 
 function decimaPrimeiraSeccao(botao){
-    if(Number(botao.innerHTML) == resultadoSeccao11){
+    if(botao.textContent === resultadoSeccao11){
         respostaCerta(botao);
         calcularPontos();
     }else{
@@ -405,10 +405,10 @@ aceitarRecomecarJogo.addEventListener("click", () =>{
     window.location.replace("nivel-1.html");
 });
 resultadoSeccao11 = Number(resultadoSeccao11).toLocaleString("pt-AO");
-for(const botoes of todosBotoesSeccoes){
-    botoes.innerHTML = Number(botoes.innerHTML).toLocaleString("pt-AO");
-}
-
+    for(const botoes of todosBotoesSeccoes){
+        botoes.textContent = Number(botoes.textContent).toLocaleString("pt-AO");
+    }
+console.log(resultadoSeccao11)
 function teste(){
     let n1 = Number(Math.floor(Math.random() * ((860 - 600) + 1) + 600));
     let n2 = Number(Math.floor(Math.random() * ((40 - 14) + 1) + 14));
@@ -423,3 +423,27 @@ function teste(){
 
 teste()
 console.log(Number(1897) === Number("1897").toLocaleString("pt-AO"))
+console.log(botoesSeccao11[3].textContent)
+console.log(botoesSeccao11[3].textContent === resultadoSeccao11)
+// console.log(botoesSeccao11[3].innerHTML)
+// console.log(resultadoSeccao11)
+// console.log(botoesSeccao11[3].innerHTML.length)
+// console.log(botoesSeccao11[3].innerHTML.replace(/\D/g, "") == resultadoSeccao11);
+// botoesSeccao11[3].innerHTML = Number(botoesSeccao11[3].innerHTML.replace(/\D/g, ""));
+// console.log(resultadoSeccao11.toLocaleString("pt-AO"));
+// console.log(Number(botoesSeccao11[3].innerHTML).toLocaleString("pt-AO"))
+// console.log(resultadoSeccao11.toLocaleString("pt-AO") === Number(botoesSeccao11[3].innerHTML).toLocaleString("pt-AO"));
+// let te = Number(botoesSeccao11[3].innerHTML).toLocaleString("pt-AO");
+// console.log("Novo: " + te)
+// botoesSeccao11[3].innerHTML = te
+// console.log(botoesSeccao11[3].innerHTML)
+// console.log(botoesSeccao11[3].innerHTML.replace(/&nbsp;/g, " ") == resultadoSeccao11.toLocaleString("pt-AO"))
+
+// console.log("------")
+// botoesSeccao11[3].innerHTML = Number(4000).toLocaleString("pt-AO");
+// console.log(botoesSeccao11[3].innerHTML)
+// botoesSeccao11[3].textContent = botoesSeccao11[3].textContent.replace(/&nbsp;/g, " ")
+// console.log(botoesSeccao11[3].textContent)
+// let resu = Number(4000).toLocaleString("pt-AO");
+// console.log(resu)
+// console.log(resu == botoesSeccao11[3].textContent)

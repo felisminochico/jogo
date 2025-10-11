@@ -88,13 +88,13 @@ function mudancaValores2(res, btnSeccao){
             }
         }else{  
             if(c == 0){
-                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res - 1) - (res - 10)) + 1) + (res - 10)));
+                btnSeccao[c].textContent = Number(Math.floor(Math.random() * (((res - 1) - (res - 10)) + 1) + (res - 10)));
             }else if(c == 1){
-                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res + 10) - (res + 1)) + 1) + (res + 1)));
+                btnSeccao[c].textContent = Number(Math.floor(Math.random() * (((res + 10) - (res + 1)) + 1) + (res + 1)));
             }else if(c == 2){
-                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res - 11) - (res - 20)) + 1) + (res - 20)));
+                btnSeccao[c].textContent = Number(Math.floor(Math.random() * (((res - 11) - (res - 20)) + 1) + (res - 20)));
             }else if(c == 3){
-                btnSeccao[c].innerHTML = Number(Math.floor(Math.random() * (((res + 20) - (res + 11)) + 1) + (res + 11)));
+                btnSeccao[c].textContent = Number(Math.floor(Math.random() * (((res + 20) - (res + 11)) + 1) + (res + 11)));
             }
         }
     }
