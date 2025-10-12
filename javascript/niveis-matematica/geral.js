@@ -247,11 +247,11 @@ function proximoNivel(pts, vds){
 }
 
 //Mostrar o Botão Certo de Qualquer Seccão
-function respostaErrada(botao, btnSeccao1, resultado){
+function respostaErrada(botao, btnSeccao, resultado){
     botao.style.animation = "respostaErrada 3.6s forwards";
     // vidasJS -= 1;
-    for(const btn of btnSeccao1){
-        if(Number(btn.innerHTML) === resultado){
+    for(const btn of btnSeccao){
+        if(btn.textContent === resultado){
             setTimeout(()=>{
                 btn.style.backgroundColor = "rgb(12, 139, 12)";
                 btn.style.color = "white";
