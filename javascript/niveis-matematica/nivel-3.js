@@ -1,5 +1,9 @@
 // alert("Olá, Mundo!");
-//Recepção dos Pontos e Vidas do Nível 2
+try{
+    if(sessionStorage.getItem("nivel3") === null){
+        throw new Error("Impossível Avançar! Conclua o Nível 2");
+    }else{
+        //Recepção dos Pontos e Vidas do Nível 2
 let pontosJS3 = Number(sessionStorage.getItem("pontos"));
 let vidasJS3 = Number(sessionStorage.getItem("vidas")) + 2;
 pontosHTML.innerHTML = pontosJS3;
@@ -416,43 +420,9 @@ for(const botoes of todosBotoesSeccoes){
     botoes.textContent = Number(botoes.textContent).toLocaleString("pt-AO");
 }
 
-function teste(){
-    let n1 = Number(Math.floor(Math.random() * ((860 - 600) + 1) + 600));
-    let n2 = Number(Math.floor(Math.random() * ((40 - 14) + 1) + 14));
-    let res = n1 / n2
-
-    if(Number.isInteger(res) === false || res < 40){
-        teste()
-    }else{
-        console.log(`${n1} / ${n2} = ${res}`)
-    }
-}
-
-teste()
-console.log(Number(1897) === Number("1897").toLocaleString("pt-AO"))
-console.log(botoesSeccao11[3].textContent)
-console.log(botoesSeccao11[3].textContent === resultados[11])
-// console.log(botoesSeccao11[3].innerHTML)
-// console.log(resultadoSeccao11)
-// console.log(botoesSeccao11[3].innerHTML.length)
-// console.log(botoesSeccao11[3].innerHTML.replace(/\D/g, "") == resultadoSeccao11);
-// botoesSeccao11[3].innerHTML = Number(botoesSeccao11[3].innerHTML.replace(/\D/g, ""));
-// console.log(resultadoSeccao11.toLocaleString("pt-AO"));
-// console.log(Number(botoesSeccao11[3].innerHTML).toLocaleString("pt-AO"))
-// console.log(resultadoSeccao11.toLocaleString("pt-AO") === Number(botoesSeccao11[3].innerHTML).toLocaleString("pt-AO"));
-// let te = Number(botoesSeccao11[3].innerHTML).toLocaleString("pt-AO");
-// console.log("Novo: " + te)
-// botoesSeccao11[3].innerHTML = te
-// console.log(botoesSeccao11[3].innerHTML)
-// console.log(botoesSeccao11[3].innerHTML.replace(/&nbsp;/g, " ") == resultadoSeccao11.toLocaleString("pt-AO"))
-
-// console.log("------")
-// botoesSeccao11[3].innerHTML = Number(4000).toLocaleString("pt-AO");
-// console.log(botoesSeccao11[3].innerHTML)
-// botoesSeccao11[3].textContent = botoesSeccao11[3].textContent.replace(/&nbsp;/g, " ")
-// console.log(botoesSeccao11[3].textContent)
-// let resu = Number(4000).toLocaleString("pt-AO");
-// console.log(resu)
-// console.log(resu == botoesSeccao11[3].textContent)
-// resultados[1] = 38;
 console.log(resultados);
+    }
+}catch(erro){
+    window.document.body.innerHTML = "<h2>Erro: " + erro.message + "</h2>";
+    window.document.body.style.backgroundColor = "white";
+}

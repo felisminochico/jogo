@@ -296,5 +296,6 @@ aceitarRecomecarJogo.addEventListener("click", () =>{
 avancarNivel3.addEventListener("click", ()=>{
     sessionStorage.setItem("pontos", pontosJS2);
     sessionStorage.setItem("vidas", vidasJS2);
+    sessionStorage.setItem("nivel3", true);
     window.location.replace("nivel-3.html");
 })

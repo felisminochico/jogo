@@ -68,8 +68,6 @@ function mudarValoresQuestoes(dividendo, divisor, dividendoMax, dividendoMin, di
 
     if(Number.isInteger(res) === false || res < resultadoMin){
         mudarValoresQuestoes(dividendo, divisor, dividendoMax, dividendoMin, divisorMax, divisorMin, resultadoMin);
-    }else{
-        console.log("O resultado é exato.");
     }
 }
 
@@ -264,10 +262,6 @@ function respostaErrada(botao, btnSeccao, resultado){
 //Resposta Certa de Qualquer Secçao
 function respostaCerta(botao){
     botao.style.animation = "respostaCerta 3.6s forwards";
-    // setTimeout(() =>{
-    //     pontosJS += 5;
-    //     pontosHTML.innerHTML = pontosJS;
-    // }, 3600);
 }
 
 //Função para negar recomeçar o Jogo
