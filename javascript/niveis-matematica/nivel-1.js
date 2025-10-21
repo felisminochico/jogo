@@ -169,25 +169,53 @@ function quintaSeccao(botao){
     }
     desabilitarBotoesAtuais(botoesSeccao5);
 
-    // if(vidasJS < 1){
-    //     gameOver();
-    // }else{
-    //     proximoNivel(pontosJS, vidasJS);
-    // }
-    console.log(verificarCliques);
-    let certo = 0
-    let errado = 0
-    setTimeout(()=>{
+    if(vidasJS < 1){
+        gameOver();
+    }else{
+        let certo = 0;
+        let errado = 0
+        let trapaca = 0;
         for(let c = 1; c < resultados.length; c++){
-            if(verificarCliques[c] === resultados[c]){
-                certo++
+            if(verificarCliques[c] != undefined){
+                trapaca++
             }else{
-                errado++
+                if(verificarCliques[c] === resultados[c]){
+                    certo++
+                }else{
+                    errado++
+                }
             }
         }
-        console.log("Total de Certos: " + certo);
-        console.log("Total de Errados: " + errado);
-    }, 3500)
+
+        if(errado > 2){
+            setTimeout(() => {
+                alert("ERRO: Secções de Respostas não concluídas.")
+            }, 3600);
+        }else if(certo >= 3){
+            setTimeout(() => {
+                alert("Tudo certo! Pode prosseguir.")
+            }, 3600);
+        }else if(trapaca !== 0){
+            setTimeout(()=>{
+                alert("ERRO: O Jogo foi hackeado!");
+            }, 3600)
+        }
+        // proximoNivel(pontosJS, vidasJS);
+    }
+    // console.log(verificarCliques);
+    // let certo = 0
+    // let errado = 0
+    // setTimeout(()=>{
+    //     for(let c = 1; c < resultados.length; c++){
+    //         if(verificarCliques[c] === resultados[c]){
+    //             certo++
+    //         }else{
+    //             errado++
+    //         }
+    //     }
+    //     console.log("Total de Certos: " + certo);
+    //     console.log("Total de Errados: " + errado);
+    // }, 3500)
 }
 
 //Função para aceitar Recomeçar o jogo
