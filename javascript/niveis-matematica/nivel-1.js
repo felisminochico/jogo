@@ -176,16 +176,15 @@ function quintaSeccao(botao){
         let errado = 0
         let trapaca = 0;
         for(let c = 1; c < resultados.length; c++){
-            if(verificarCliques[c] != undefined){
-                trapaca++
-            }else{
-                if(verificarCliques[c] === resultados[c]){
-                    certo++
-                }else{
-                    errado++
-                }
+            if(verificarCliques[c] === undefined || verificarCliques[c] !== resultados[c]){
+                errado++
+                // alert("Indefinido: " + verificarCliques.indexOf(verificarCliques[c]))
+            }else if(verificarCliques[c] === resultados[c]){
+                certo++
             }
         }
+        console.log("Certo: " + certo)
+        console.log("Errado: " + errado)
 
         if(errado > 2){
             setTimeout(() => {
@@ -195,11 +194,12 @@ function quintaSeccao(botao){
             setTimeout(() => {
                 alert("Tudo certo! Pode prosseguir.")
             }, 3600);
-        }else if(trapaca !== 0){
-            setTimeout(()=>{
-                alert("ERRO: O Jogo foi hackeado!");
-            }, 3600)
+        // }else if(trapaca > 0){
+        //     setTimeout(()=>{
+        //         alert("ERRO: O Jogo foi hackeado!");
+        //     }, 3600)
         }
+        console.log(verificarCliques)
         // proximoNivel(pontosJS, vidasJS);
     }
     // console.log(verificarCliques);
@@ -225,9 +225,23 @@ aceitarRecomecarJogo.addEventListener("click", ()=>{
 
 //Função para Avançar para o Nível 2
 avancarNivel2.addEventListener("click", ()=>{
+    for(let c = 1; c < resultados.length; c++){
+        if(verificarCliques[c] === undefined || verificarCliques[c] !== resultados[c]){
+            errado++;
+        }else if(verificarCliques[c] === resultados[c]){
+            certo++;
+        }
+    }
+
+    if(errado > 2){
+        alert("ERRO: Secções de Respostas não concluídas.")
+    }else if(certo >= 3 && certo <= 5){
+        alert("Tudo certo! Pode prosseguir.")
+    }
     // sessionStorage.setItem("pontos", pontosJS);
     // sessionStorage.setItem("vidas", vidasJS);
-    // window.location.replace("nivel-2.html");
+    sessionStorage.setItem("nivel2", true);
+    window.location.replace("nivel-2.html");
 });
 
 //Colocando todos os valores de Resultados no padrão de Angola
