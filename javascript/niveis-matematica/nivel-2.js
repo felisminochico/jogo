@@ -134,6 +134,7 @@ try{
 
         //Primeira Secção
         function primeiraSeccao(botao){
+            verificarCliques[1] = botao.textContent;
             if(botao.textContent === resultados[1]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -146,6 +147,7 @@ try{
         }
 
         function segundaSeccao(botao){
+            verificarCliques[2] = botao.textContent;
             if(botao.textContent === resultados[2]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -158,6 +160,7 @@ try{
         }
 
         function terceiraSeccao(botao){
+            verificarCliques[3] = botao.textContent;
             if(botao.textContent === resultados[3]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -175,6 +178,7 @@ try{
         }
 
         function quartaSeccao(botao){
+            verificarCliques[4] = botao.textContent;
             if(botao.textContent === resultados[4]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -192,6 +196,7 @@ try{
         }
 
         function quintaSeccao(botao){
+            verificarCliques[5] = botao.textContent;
             if(botao.textContent === resultados[5]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -209,6 +214,7 @@ try{
         }
 
         function sextaSeccao(botao){
+            verificarCliques[6] = botao.textContent;
             if(botao.textContent === resultados[6]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -226,6 +232,7 @@ try{
         }
 
         function setimaSeccao(botao){
+            verificarCliques[7] = botao.textContent;
             if(botao.textContent === resultados[7]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -243,6 +250,7 @@ try{
         }
 
         function oitavaSeccao(botao){
+            verificarCliques[8] = botao.textContent;
             if(botao.textContent === resultados[8]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -260,6 +268,7 @@ try{
         }
 
         function nonaSeccao(botao){
+            verificarCliques[9] = botao.textContent;
             if(botao.textContent === resultados[9]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -277,6 +286,7 @@ try{
         }
 
         function decimaSeccao(botao){
+            verificarCliques[10] = botao.textContent;
             if(botao.textContent === resultados[10]){
                 respostaCerta(botao);
                 calcularPontos();
@@ -289,8 +299,24 @@ try{
             if(vidasJS2 < 1){
                 gameOver();
             }else{
-                proximoNivel(pontosJS2, vidasJS2);
+                // proximoNivel(pontosJS2, vidasJS2);
+                let certo = 0;
+                let errado = 0;
+                for(let c = 1; c < resultados.length; c++){
+                    if(verificarCliques[c] === undefined || verificarCliques[c] !== resultados[c]){
+                        errado++;
+                    }else if(verificarCliques[c] === resultados[c]){
+                        certo++;
+                    }
+                }
+
+                if(errado > 2){
+                    alert("ERRO: Secções de Respostas não concluídas.");
+                }else{
+                    alert("Tudo certo! Pode prosseguir.");
+                }
             }
+            console.log(verificarCliques)
         }
 
         //Função para aceitar Recomeçar o Jogo
@@ -305,14 +331,30 @@ try{
             // sessionStorage.setItem("vidas", vidasJS2);
             // sessionStorage.setItem("nivel3", true);
             // window.location.replace("nivel-3.html");
+            let certo = 0;
+                let errado = 0;
+                for(let c = 1; c < resultados.length; c++){
+                    if(verificarCliques[c] === undefined || verificarCliques[c] !== resultados[c]){
+                        errado++;
+                    }else if(verificarCliques[c] === resultados[c]){
+                        certo++;
+                    }
+                }
+
+                if(errado > 2){
+                    alert("ERRO: Secções de Respostas não concluídas.");
+                }else{
+                    alert("Tudo certo! Pode prosseguir.");
+                }
         })
 
         for(let c = 0; c < todosBotoesSeccoes.length; c++){
-            todosBotoesSeccoes[c].textContent = Number(todosBotoesSeccoes[c].textContent).toLocaleString("pt-AO")
+            todosBotoesSeccoes[c].textContent = Number(todosBotoesSeccoes[c].textContent).toLocaleString("pt-AO");
         }
 
         for(let c = 1; c <resultados.length; c++){
-            resultados[c] = Number(resultados[c]).toLocaleString("pt-AO")
+            resultados[c] = Number(resultados[c]).toLocaleString("pt-AO");
+            // verificarCliques[c] = Number(verificarCliques[c]).toLocaleString("pt-AO");
         }
 
         console.log(resultados)

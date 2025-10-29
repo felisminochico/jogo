@@ -225,6 +225,8 @@ aceitarRecomecarJogo.addEventListener("click", ()=>{
 
 //Função para Avançar para o Nível 2
 avancarNivel2.addEventListener("click", ()=>{
+    let errado = 0;
+    let certo = 0;
     for(let c = 1; c < resultados.length; c++){
         if(verificarCliques[c] === undefined || verificarCliques[c] !== resultados[c]){
             errado++;

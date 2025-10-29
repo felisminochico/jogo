@@ -13,6 +13,7 @@ vidasHTML.innerHTML = vidasJS3;
 const aceitarRecomecarJogo = window.document.getElementById("aceitar-recomecar");
 const resultados = Array(16);
 const avancarNivel4 = window.document.getElementById("avancar-nivel-4");
+const verificarCliques = Array(16);
 
 //Desabilitação da Primeira Secção
 for(const botoes of botoesSeccao1){
@@ -395,7 +396,7 @@ function decimaQuintaSeccao(botao){
         respostaErrada(botao, botoesSeccao15, resultados[15]);
         calcularVidas();
     }
-    desabilitarBotoesAtuais(botoesSeccao15);
+       desabilitarBotoesAtuais(botoesSeccao15);
 
     if(vidasJS3 < 1){
         gameOver();
