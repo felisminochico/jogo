@@ -1,4 +1,5 @@
 // alert('Olá, Mundo!');
+
 //Variaveis Globais
 let pontosJS = 0;
 let vidasJS = 3;
@@ -183,43 +184,23 @@ function quintaSeccao(botao){
                 certo++
             }
         }
-        console.log("Certo: " + certo)
-        console.log("Errado: " + errado)
 
         if(errado > 2){
-            setTimeout(() => {
-                alert("ERRO: Secções de Respostas não concluídas.")
-            }, 3600);
+            alert("ERRO: Secções de Respostas não concluídas.")
+            recomecarJogo();
         }else if(certo >= 3){
-            setTimeout(() => {
-                alert("Tudo certo! Pode prosseguir.")
-            }, 3600);
+            proximoNivel(pontosJS, vidasJS);
         // }else if(trapaca > 0){
         //     setTimeout(()=>{
         //         alert("ERRO: O Jogo foi hackeado!");
         //     }, 3600)
         }
-        console.log(verificarCliques)
-        // proximoNivel(pontosJS, vidasJS);
     }
-    // console.log(verificarCliques);
-    // let certo = 0
-    // let errado = 0
-    // setTimeout(()=>{
-    //     for(let c = 1; c < resultados.length; c++){
-    //         if(verificarCliques[c] === resultados[c]){
-    //             certo++
-    //         }else{
-    //             errado++
-    //         }
-    //     }
-    //     console.log("Total de Certos: " + certo);
-    //     console.log("Total de Errados: " + errado);
-    // }, 3500)
 }
 
-//Função para aceitar Recomeçar o jogo
+//Função para aceitar Recomeçar o Jogo
 aceitarRecomecarJogo.addEventListener("click", ()=>{
+    sessionStorage.clear();
     window.location.reload();
 })
 
@@ -237,13 +218,13 @@ avancarNivel2.addEventListener("click", ()=>{
 
     if(errado > 2){
         alert("ERRO: Secções de Respostas não concluídas.")
+        recomecarJogo();
     }else if(certo >= 3 && certo <= 5){
-        alert("Tudo certo! Pode prosseguir.")
+        sessionStorage.setItem("pontos", pontosJS);
+        sessionStorage.setItem("vidas", vidasJS);
+        sessionStorage.setItem("nivel2ConcluidoComSucesso", true);
+        window.location.replace("nivel-2.html");
     }
-    // sessionStorage.setItem("pontos", pontosJS);
-    // sessionStorage.setItem("vidas", vidasJS);
-    sessionStorage.setItem("nivel2", true);
-    window.location.replace("nivel-2.html");
 });
 
 //Colocando todos os valores de Resultados no padrão de Angola
@@ -252,6 +233,3 @@ for(let c = 1; c < resultados.length; c++){
 }
 
 console.log(resultados)
-console.log(verificarCliques)
-
-console.log(verificarCliques[0] === undefined)

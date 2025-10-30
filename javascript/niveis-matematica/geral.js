@@ -52,13 +52,13 @@ const anoAtual = window.document.getElementById("ano-atual");
 anoAtual.innerHTML = "\u00A9 " + new Date().toLocaleString(linguagemLocal, {year: "numeric"});
 
 //Desabilitação e Opacidade de todas Secções e Botões
-// for(const botoes of todosBotoesSeccoes){
-//     botoes.disabled = true;
-//     botoes.style.cursor = "auto";
-// }
-// for(const secc of Seccoes){
-//     secc.style.opacity = "0.1";
-// }
+for(const botoes of todosBotoesSeccoes){
+    botoes.disabled = true;
+    botoes.style.cursor = "auto";
+}
+for(const secc of Seccoes){
+    secc.style.opacity = "0.1";
+}
 
 //Função que muda os valores das Questões
 function mudarValoresQuestoes(dividendo, divisor, dividendoMax, dividendoMin, divisorMax, divisorMin, resultadoMin){
@@ -201,6 +201,12 @@ for(const botoes of botoesSeccao15){
     botoes.addEventListener("click", function(){
         decimaQuintaSeccao(this);
     });
+}
+
+//Função para Recomeçar o Jogo
+function recomecarJogo(){
+    window.sessionStorage.clear();
+    window.location.replace("nivel-1.html");
 }
 
 //Janela Sair Categoria
