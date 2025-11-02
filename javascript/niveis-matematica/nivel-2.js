@@ -1,13 +1,11 @@
 try{
     if(sessionStorage.getItem("nivel2ConcluidoComSucesso") === null){
         throw new Error("Impossível avançar! Conclua o Nível 1")
+    }else if(window.performance.getEntriesByType("navigation")[0].type === "back_forward"){
+        throw new Error("Navegação entre páginas não permitida. Voltando à Categorias.");
+    }else if(window.performance.getEntriesByType("navigation")[0].type === "reload"){
+        throw new Error("Refresh da Página não permitido. Voltando à Categorias.");
     }
-    // console.log("Funcioanando...")
-
-    // if(window.performance.getEntriesByType("navigation")[0].type === "reload"){
-    //     sessionStorage.clear();
-    //     window.location.replace("../categorias.html");
-    // }
 
     //Recepção dos Pontos e Vidas do Nível 1
     let pontosJS2 = Number(sessionStorage.getItem("pontos"));
@@ -357,8 +355,13 @@ try{
     }
 
     console.log(resultados)
+    console.log(window.performance.getEntriesByType("navigation")[0].type)
     
 }catch(erro){
-    window.document.body.innerHTML = "<h2>Erro: " + erro.message + "</h2>";
+    window.sessionStorage.clear();
+    window.document.body.innerHTML = "<h2>ERRO: " + erro.message + "</h2>";
     window.document.body.style.backgroundColor = "white";
+    setTimeout(function(){
+        window.location.replace("../categorias.html");
+    }, 2500);
 }

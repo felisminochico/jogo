@@ -2,11 +2,15 @@
 try{
     if(sessionStorage.getItem("nivel3ConcluidoComSucesso") === null){
         throw new Error("Impossível Avançar! Conclua o Nível 2");
+    }else if(window.performance.getEntriesByType("navigation")[0].type === "back_forward"){
+        throw new Error("Navegação entre páginas não permitida. Voltando à Categorias.");
+    }else if(window.performance.getEntriesByType("navigation")[0].type === "reload"){
+        throw new Error("Refresh da Página não permitido. Voltando à Categorias.");
     }
 
     //Recepção dos Pontos e Vidas do Nível 2
     let pontosJS3 = Number(sessionStorage.getItem("pontos"));
-    let vidasJS3 = Number(sessionStorage.getItem("vidas")) + 2;
+    let vidasJS3 = Number(sessionStorage.getItem("vidas"));
     pontosHTML.innerHTML = pontosJS3;
     vidasHTML.innerHTML = vidasJS3;
 
@@ -427,7 +431,7 @@ try{
                 }
             }
 
-            if(errado > 3){
+            if(errado > 2){
                 alert("ERRO: Secções de Respostas não concluídas.");
                 recomecarJogo();
             }else if(certo > 3){
@@ -442,6 +446,28 @@ try{
         window.location.replace("nivel-1.html");
     });
 
+    //Função para avançar no Nível 4
+    avancarNivel4.addEventListener("click", function(){
+        let certo = 0;
+            let errado = 0
+            for(let c = 1; c < resultados.length; c++){
+                if(verificarCliques[c] === undefined || verificarCliques[c] !== resultados[c]){
+                    errado++;
+                }else if(verificarCliques[c] === resultados[c]){
+                    certo++;
+                }
+            }
+
+            if(errado > 2){
+                alert("ERRO: Secções de Respostas não concluídas.");
+                recomecarJogo();
+            }else{
+                sessionStorage.clear();
+                sessionStorage.setItem("nivel4ProntoPraPartir", true);
+                window.location.replace("nivel-4.html");
+            }
+    })
+
     //Colocando todos os valores de Resultados no padrão de Angola
     for(let c = 1; c < resultados.length; c++){
         resultados[c] = Number(resultados[c]).toLocaleString("pt-AO");
@@ -455,6 +481,10 @@ try{
     console.log(resultados);
 
 }catch(erro){
+    window.sessionStorage.clear();
     window.document.body.innerHTML = "<h2>Erro: " + erro.message + "</h2>";
     window.document.body.style.backgroundColor = "white";
+    setTimeout(function(){
+        window.location.replace("../categorias.html");
+    }, 2500);
 }

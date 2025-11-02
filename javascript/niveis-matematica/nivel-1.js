@@ -1,5 +1,20 @@
 // alert('Olá, Mundo!');
 
+try{
+    if(window.performance.getEntriesByType("navigation")[0].type === "back_forward"){
+        throw new Error("Navegação entre páginas não permitida. Voltando à Categorias.");
+    }else if(window.performance.getEntriesByType("navigation")[0].type === "reload"){
+        // throw new Error("Refresh da Página não permitido. Voltando à Categorias.");
+    }
+}catch(erro){
+    window.sessionStorage.clear();
+    window.document.body.innerHTML = "<h2>ERRO: " + erro.message + "</h2>";
+    window.document.body.style.backgroundColor = "white";
+    setTimeout(function(){
+        window.location.replace("../categorias.html");
+    }, 2500);
+}
+
 //Variaveis Globais
 let pontosJS = 0;
 let vidasJS = 3;
@@ -232,4 +247,7 @@ for(let c = 1; c < resultados.length; c++){
     resultados[c] = Number(resultados[c]).toLocaleString("pt-AO");
 }
 
+janelaSairCategoria();
+
 console.log(resultados)
+console.log(window.performance.getEntriesByType("navigation")[0].type)

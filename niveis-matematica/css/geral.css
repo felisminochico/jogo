@@ -377,9 +377,17 @@ main > dialog#sair-categoria{
         display: grid;
         align-content: space-between;
         min-height: 120px;
-        padding: 10px;
+        /* padding: 10px; */
+
+        #cabecalho{
+            background-color: var(--cor2);
+            color: white;
+            font-weight: normal;
+            padding: 12px;
+        }
 
         #conteudo-sair-categoria{
+            padding: 10px;
 
             p{
                 line-height: 1.5em;
@@ -391,22 +399,22 @@ main > dialog#sair-categoria{
             color: white;
             column-gap: 12px;
             justify-content: end;
+            padding: 10px;
 
             span{
                 border-radius: 5px;
                 cursor: pointer;
                 padding: 10px 0px;
                 text-align: center;
-                width: 110px;
             }
 
-            span#aceitar-sair-categoria{
+            /* span#aceitar-sair-categoria{
                 background: var(--cor4);
             }
 
             span#nao-aceitar-sair-categoria{
                 background-color: var(--cor1);
-            }
+            } */
         }
     }
 }

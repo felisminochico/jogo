@@ -11,3 +11,36 @@ header > nav{
 main > section > h3{
     font-size: 1.2em;
 }
+
+main > dialog#sair-categoria{
+    max-width: 75%;
+    #caixa-sair-categoria{
+        
+
+        #cabecalho{
+
+        }
+
+        #conteudo-sair-categoria{
+            font-size: 1em;
+            padding-bottom: 25px;
+        }
+
+        #opcao-sair-categoria{
+            column-gap: 10px;
+            padding-right: 10px;
+
+            span{
+                width: 100px;
+            }
+
+            span#aceitar-sair-categoria{
+                background-color: var(--cor4);
+            }
+
+            span#nao-aceitar-sair-categoria{
+                background-color: var(--cor1);
+            }
+        }
+    }
+}

@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+:root{
+    --cor0: #1B512D;
+    --cor1: #455755;
+    --cor2: #020620;
+    --cor3: #F07A50;
+    --cor4: #45214A;
+}
+
 header > h1{
     font-size: 2.4em;
 }
@@ -18,4 +26,36 @@ main > section > article > p > button{
 
 main > div#link-sair-categoria > button{
     width: 100%;
+}
+
+main > dialog#sair-categoria{
+    width: 70%;
+    #caixa-sair-categoria{
+        
+
+        #cabecalho{
+
+        }
+
+        #conteudo-sair-categoria{
+            font-size: 0.9em;
+        }
+
+        #opcao-sair-categoria{
+            column-gap: 30px;
+            padding-right: 30px;
+
+            span{
+
+            }
+
+            span#aceitar-sair-categoria{
+                color: var(--cor4);
+            }
+
+            span#nao-aceitar-sair-categoria{
+                color: var(--cor1);
+            }
+        }
+    }
 }
