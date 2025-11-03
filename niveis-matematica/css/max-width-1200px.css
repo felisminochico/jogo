@@ -8,8 +8,75 @@ header > nav{
     justify-content: space-around;
 }
 
+main > h2{
+    font-size: 2em;
+}
+
 main > section > h3{
-    font-size: 1.2em;
+    font-size: 1.3em;
+}
+
+main > dialog#game-over{
+    max-width: 75%;
+
+    #caixa-game-over{
+
+        #conteudo-game-over{
+            
+            h3{
+                font-size: 1.54em;
+            }
+
+            p{
+                line-height: 1.4em;
+            }
+        }
+
+        #opcao-game-over{
+            column-gap: 16px;
+
+            span{
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                padding: 10px;
+                text-align: center;
+                width: 100px;
+            }
+
+            span#aceitar-recomecar{
+                background-color: var(--cor4);
+            }
+
+            span#nao-aceitar-recomecar{
+                background-color: var(--cor1);
+            }
+        }
+    }
+}
+
+main > dialog#proximo-nivel{
+    max-width: 550px;
+
+    #caixa-proximo-nivel{
+
+        #conteudo-proximo-nivel{
+            padding: 7px 5px 10px 5px;
+
+            h3{
+                font-size: 1.54em;
+                font-weight: normal;
+            }
+
+            p{
+                line-height: 1.4em;
+            }
+        }
+
+        #opcao-proximo-nivel{
+            padding: 6px 5px;
+        }
+    }
 }
 
 main > dialog#sair-categoria{

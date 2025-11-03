@@ -462,8 +462,9 @@ try{
                 alert("ERRO: Secções de Respostas não concluídas.");
                 recomecarJogo();
             }else{
-                sessionStorage.clear();
-                sessionStorage.setItem("nivel4ProntoPraPartir", true);
+                window.sessionStorage.setItem("pontos", pontosJS3);
+                window.sessionStorage.setItem("vidas", vidasJS3);
+                window.sessionStorage.setItem("nivel4ProntoPraPartir", true);
                 window.location.replace("nivel-4.html");
             }
     })

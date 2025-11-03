@@ -242,6 +242,7 @@ main > article > section{
     padding: 10px;
 
     p{
+        font-style: italic;
         line-height: 1.5em;
     }
 

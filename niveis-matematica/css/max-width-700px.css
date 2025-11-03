@@ -13,37 +13,23 @@ main > section > h3{
 }
 
 main > section > article > p > button{
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
-main > dialog#sair-categoria{
-    max-width: 75%;
-    #caixa-sair-categoria{
-        
+main > dialog#sair-categoria, dialog#game-over{
+    
+    #caixa-sair-categoria, #caixa-game-over{
 
-        #cabecalho{
-
-        }
-
-        #conteudo-sair-categoria{
-            font-size: 1em;
-        }
-
-        #opcao-sair-categoria{
-            column-gap: 10px;
-            padding-right: 10px;
+        #opcao-sair-categoria, #opcao-game-over{
+            align-self: self-end;
 
             span{
                 width: 80px;
             }
-
-            span#aceitar-sair-categoria{
-                background-color: var(--cor4);
-            }
-
-            span#nao-aceitar-sair-categoria{
-                background-color: var(--cor1);
-            }
         }
     }
+}
+
+main > dialog#proximo-nivel{
+    max-width: 75%;
 }

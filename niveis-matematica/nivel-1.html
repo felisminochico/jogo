@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/geral.css" media="all" type="text/css">
     <link rel="stylesheet" href="css/min-width-1200px.css" media="screen and (min-width: 1200px)" type="text/css">
-    <link rel="stylesheet" href="css/max-width-1200px.css" media="screen and (min-width: 992.1px) and (max-width: 1200px)" type="text/css">
-    <link rel="stylesheet" href="css/max-width-992px.css" media="screen and (min-width:700.1px) and (max-width: 992px)" type="text/css">
-    <link rel="stylesheet" href="css/max-width-700px.css" media="screen and (min-width: 460.1px) and (max-width: 700px)" type="text/css">
+    <link rel="stylesheet" href="css/max-width-1200px.css" media="screen and (max-width: 1200px)" type="text/css">
+    <link rel="stylesheet" href="css/max-width-992px.css" media="screen and (max-width: 992px)" type="text/css">
+    <link rel="stylesheet" href="css/max-width-700px.css" media="screen and (max-width: 700px)" type="text/css">
     <link rel="stylesheet" href="css/max-width-460px.css" media="screen and (max-width: 460px)" type="text/css">
+    <link rel="stylesheet" href="css/max-width-330px.css" media="screen and (max-width: 330px)" type="text/css">
     <title>Jogo de Sabedoria - Matemática</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
     </header>
 
     <main>
-        <h2>Nível 1</h2>
+        <h2>Iniciante</h2>
 
         <section class="seccoes">
             <h3>1 - Quanto é <span id="valores-seccao-1"><span>X</span> x <span>X</span></span>?</h3>
@@ -75,9 +76,12 @@
 
         <dialog id="game-over">
             <div id="caixa-game-over">
+                <div id="cabecalho">
+                    <span>Jogo de Sabedoria</span>
+                </div>
                 <div id="conteudo-game-over">
                     <h3>Você perdeu!&#x1F614;</h3>
-                    <p>Ficaste sem mais tentativas no Jogo, deseja recomeçar?</p>
+                    <p>Os obstáculos existem pra um <strong>Iniciante</strong>, deseja recomeçar?</p>
                 </div>
                 <div id="opcao-game-over">
                     <span id="aceitar-recomecar">Sim</span> <span id="nao-aceitar-recomecar">Não</span>
@@ -102,9 +106,12 @@
 
         <dialog id="proximo-nivel">
             <div id="caixa-proximo-nivel">
+                <div id="cabecalho">
+                    <span>Jogo de Sabedoria</span>
+                </div>
                 <div id="conteudo-proximo-nivel">
                     <h3>Parabéns!!!&#x1F3C6;</h3>
-                    <p>Você conseguiu passar o <strong>Nível 1</strong>, prepare-se para o próximo nível.</p>
+                    <p>Para um <strong>Iniciante</strong>, você se saiu bem até aqui. Prepare-se para o <strong>Nível 2</strong>.</p>
                 </div>
 
                 <div id="opcao-proximo-nivel">
@@ -127,7 +134,7 @@
     <footer>
         <div id="contactos">
             <span>Contactos</span>
-            <span>943 136 535 | 941 500 596</span>
+            <span>+244 943 136 535 | +244 941 500 596</span>
         </div>
 
         <div>

@@ -60,6 +60,18 @@ for(const secc of Seccoes){
     secc.style.opacity = "0.1";
 }
 
+//Fixando a Nav quando chegar no topo
+window.addEventListener("scroll", fixarNav)
+
+function fixarNav(){
+    if(posicaoAtualNav <= window.scrollY){
+        nav.classList.add("fixo");
+    }else{
+        nav.classList.remove("fixo");
+    }
+}
+requestAnimationFrame(fixarNav);
+
 //Função que muda os valores das Questões
 function mudarValoresQuestoes(dividendo, divisor, dividendoMax, dividendoMin, divisorMax, divisorMin, resultadoMin){
     dividendo.innerHTML = Number(Math.floor(Math.random() * ((dividendoMax - dividendoMin) + 1) + dividendoMin))
@@ -236,7 +248,7 @@ function gameOver(){
         caixaGameOver.style.animation = "janela 0.5s forwards";
         caixaGameOver.showModal();
         window.document.body.style.overflow = "hidden";
-    }, 5000);
+    }, 0);
 }
 
 //Janela do Nível 2
@@ -275,18 +287,6 @@ negarRecomecarJogo.addEventListener("click", ()=>{
     sessionStorage.clear();
     window.location.replace("../categorias.html");
 });
-
-//Fixando a Nav quando chegar no topo
-window.addEventListener("scroll", fixarNav)
-
-function fixarNav(){
-    if(posicaoAtualNav <= window.scrollY){
-        nav.classList.add("fixo");
-    }else{
-        nav.classList.remove("fixo");
-    }
-}
-requestAnimationFrame(fixarNav);
 
 //Função para Desabilitar Botões da Secção atual
 function desabilitarBotoesAtuais(btnSeccao){

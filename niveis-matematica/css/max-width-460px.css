@@ -28,6 +28,53 @@ main > div#link-sair-categoria > button{
     width: 100%;
 }
 
+main > dialog#game-over{
+
+    #caixa-game-over{
+
+        #conteudo-game-over{
+
+            h3{
+                font-size: 1.44em;
+            }
+        }
+
+        #opcao-game-over{
+            column-gap: 8px;
+
+            span{
+                color: black;
+                font-weight: bold;
+                width: 50px;
+            }
+
+            span#aceitar-recomecar{
+                background-color: white;
+                color: var(--cor4);
+            }
+
+            span#nao-aceitar-recomecar{
+                 background-color: white;
+                color: var(--cor1);
+            }
+        }
+    }
+}
+
+main > dialog#proximo-nivel{
+
+    #caixa-proximo-nivel{
+
+        #conteudo-proximo-nivel{
+
+            h3{
+                font-size: 1.44em;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
 main > dialog#sair-categoria{
     width: 70%;
     #caixa-sair-categoria{
@@ -42,18 +89,21 @@ main > dialog#sair-categoria{
         }
 
         #opcao-sair-categoria{
-            column-gap: 30px;
+            column-gap: 10px;
             padding-right: 30px;
 
             span{
-
+                font-weight: bold;
+                width: 50px;
             }
 
             span#aceitar-sair-categoria{
+                background-color: white;
                 color: var(--cor4);
             }
 
             span#nao-aceitar-sair-categoria{
+                background-color: white;
                 color: var(--cor1);
             }
         }

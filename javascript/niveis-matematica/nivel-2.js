@@ -353,9 +353,6 @@ try{
         resultados[c] = Number(resultados[c]).toLocaleString("pt-AO");
         // verificarCliques[c] = Number(verificarCliques[c]).toLocaleString("pt-AO");
     }
-
-    console.log(resultados)
-    console.log(window.performance.getEntriesByType("navigation")[0].type)
     
 }catch(erro){
     window.sessionStorage.clear();

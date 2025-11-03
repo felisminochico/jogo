@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/* body{
+    overflow-x: scroll;
+} */
+
+header, main, footer, nav{
+    min-width: 330px;
+}
+
+main > dialog#game-over{
+    overflow-y: scroll;
+}
+
+main > dialog#proximo-nivel{
+
+    #caixa-proximo-nivel{
+
+        #conteudo-proximo-nivel{
+
+            h3{
+                font-size: 1.28em;
+            }
+        }
+    }
+}

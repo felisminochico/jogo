@@ -4,7 +4,7 @@ try{
     if(window.performance.getEntriesByType("navigation")[0].type === "back_forward"){
         throw new Error("Navegação entre páginas não permitida. Voltando à Categorias.");
     }else if(window.performance.getEntriesByType("navigation")[0].type === "reload"){
-        // throw new Error("Refresh da Página não permitido. Voltando à Categorias.");
+        throw new Error("Refresh da Página não permitido. Voltando à Categorias.");
     }
 }catch(erro){
     window.sessionStorage.clear();
@@ -215,8 +215,7 @@ function quintaSeccao(botao){
 
 //Função para aceitar Recomeçar o Jogo
 aceitarRecomecarJogo.addEventListener("click", ()=>{
-    sessionStorage.clear();
-    window.location.reload();
+    recomecarJogo()
 })
 
 //Função para Avançar para o Nível 2
@@ -246,8 +245,6 @@ avancarNivel2.addEventListener("click", ()=>{
 for(let c = 1; c < resultados.length; c++){
     resultados[c] = Number(resultados[c]).toLocaleString("pt-AO");
 }
-
-janelaSairCategoria();
 
 console.log(resultados)
 console.log(window.performance.getEntriesByType("navigation")[0].type)

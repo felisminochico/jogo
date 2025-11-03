@@ -302,33 +302,36 @@ main > dialog#sair-categoria{
     }
 } */
 
-main > dialog#game-over, dialog#proximo-nivel{
+main > dialog#game-over{
     border-radius: 10px;
     margin: auto;
-    padding: 10px;
     overscroll-behavior: contain;
 
-    #caixa-game-over, #caixa-proximo-nivel{
+    #caixa-game-over{
         align-content: space-between;
         display: grid;
         min-height: 140px;
 
         #conteudo-game-over{
+            padding: 10px;
 
             h3{
-                color: darkred;
-                font-size: 1.7em;
+                color: var(--cor3);
                 font-weight: normal;
                 padding: 0px 0px 10px 0px;
+            }
+
+            p strong{
+                color: var(--cor2);
             }
         }
 
         #opcao-game-over{
-            column-gap: 12px;
             display: flex;
             justify-content: end;
+            padding: 12px 10px 8px 0px;
 
-            span{
+            /* span{
                 border-radius: 5px;
                 color: white;
                 cursor: pointer;
@@ -337,13 +340,13 @@ main > dialog#game-over, dialog#proximo-nivel{
                 width: 110px;
             }
 
-            span#aceitar-recomecar{
+                
                 background-color: var(--cor4);
             }
 
             span#nao-aceitar-recomecar{
                 background-color: var(--cor1);
-            }
+            } */
         }
     }
 }
@@ -368,6 +371,12 @@ main > div#link-sair-categoria{
     }
 }
 
+main > dialog #cabecalho{
+    background-color: var(--cor2);
+    color: white;
+    padding: 12px;
+}
+
 main > dialog#sair-categoria{
     border-radius: 10px;
     margin: auto;
@@ -378,13 +387,6 @@ main > dialog#sair-categoria{
         align-content: space-between;
         min-height: 120px;
         /* padding: 10px; */
-
-        #cabecalho{
-            background-color: var(--cor2);
-            color: white;
-            font-weight: normal;
-            padding: 12px;
-        }
 
         #conteudo-sair-categoria{
             padding: 10px;
@@ -403,6 +405,7 @@ main > dialog#sair-categoria{
 
             span{
                 border-radius: 5px;
+                color: white;
                 cursor: pointer;
                 padding: 10px 0px;
                 text-align: center;
@@ -420,9 +423,11 @@ main > dialog#sair-categoria{
 }
 
 main > dialog#proximo-nivel{
+    border-radius: 10px;
+    margin: auto;
 
     #caixa-proximo-nivel{
-        height: 180px;
+        min-height: 220px;
 
         h3{
             color: green;
