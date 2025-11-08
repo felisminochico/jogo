@@ -8,8 +8,16 @@ header, main, footer, nav{
     min-width: 330px;
 }
 
-main > dialog#game-over{
+/* main > dialog#game-over{
     overflow-y: scroll;
+} */
+
+main > dialog{
+    overflow-x: scroll;
+}
+
+main > dialog, #caixa-sair-categoria{
+    width: 300px;
 }
 
 main > dialog#proximo-nivel{
