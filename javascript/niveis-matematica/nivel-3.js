@@ -93,9 +93,9 @@ try{
     botoesSeccao9[Number(Math.floor(Math.random() * botoesSeccao9.length))].innerHTML = resultados[9];
 
     //Mudança de Valores da Secção 10
-    valoresSeccao10[0].innerHTML = Number(Math.floor(Math.random() * ((865 - 623) + 1) + 623));
-    valoresSeccao10[1].innerHTML = Number(Math.floor(Math.random() * ((479 - 326) + 1) + 326));
-    valoresSeccao10[2].innerHTML = Number(Math.floor(Math.random() * ((375 - 243) + 1) + 243));
+    valoresSeccao10[0].innerHTML = Number(Math.floor(Math.random() * ((985 - 773) + 1) + 723));
+    valoresSeccao10[1].innerHTML = Number(Math.floor(Math.random() * ((429 - 326) + 1) + 326));
+    valoresSeccao10[2].innerHTML = Number(Math.floor(Math.random() * ((271 - 193) + 1) + 193));
     resultados[10] = Number(valoresSeccao10[0].innerHTML) - Number(valoresSeccao10[1].innerHTML) + Number(valoresSeccao10[2].innerHTML);
     mudancaValores2(resultados[10], botoesSeccao10);
     botoesSeccao10[Number(Math.floor(Math.random() * botoesSeccao10.length))].innerHTML = resultados[10];
@@ -138,7 +138,6 @@ try{
     resultados[15] = (Number(valoresSeccao15[0].innerHTML) * (Number(valoresSeccao15[1].innerHTML) / Number(valoresSeccao15[2].innerHTML))) + (Number(valoresSeccao15[3].innerHTML) - Number(valoresSeccao15[4].innerHTML));
     mudancaValores2(resultados[15], botoesSeccao15);
     botoesSeccao15[Number(Math.floor(Math.random() * botoesSeccao15.length))].innerHTML = resultados[15];
-    console.log(resultados[11]);
 
     //Função para calcular pontos
     function calcularPontos(){
@@ -478,8 +477,6 @@ try{
     for(const botoes of todosBotoesSeccoes){
         botoes.textContent = Number(botoes.textContent).toLocaleString("pt-AO");
     }
-
-    console.log(resultados);
 
 }catch(erro){
     window.sessionStorage.clear();
